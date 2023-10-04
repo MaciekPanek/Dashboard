@@ -34,6 +34,21 @@ function Navbar() {
           <NavItem to="/settings">
             <span>Settings</span>
           </NavItem>
+          <NavItem to="/">
+            <span>Home</span>
+          </NavItem>
+          <NavItem to="/reservations">
+            <span>Reservations</span>
+          </NavItem>
+          <NavItem to="/villas">
+            <span>Villas</span>
+          </NavItem>
+          <NavItem to="/guests">
+            <span>Guests</span>
+          </NavItem>
+          <NavItem to="/settings">
+            <span>Settings</span>
+          </NavItem>
         </ul>
       </nav>
     </>
