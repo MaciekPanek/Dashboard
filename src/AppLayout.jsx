@@ -6,7 +6,7 @@ function AppLayout() {
     <div className="flex flex-row">
       <NavBar />
 
-      <main className=" flex-1 ">
+      <main className=" absolute left-[20%] flex-1 w-4/5">
         <Outlet />
       </main>
     </div>
