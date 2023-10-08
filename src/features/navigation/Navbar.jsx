@@ -41,6 +41,10 @@ function Navbar() {
             <HiOutlineCog6Tooth />
             <span>Settings</span>
           </NavItem>
+          <NavItem to="/settings">
+            <HiOutlineCog6Tooth />
+            <span>Settings</span>
+          </NavItem>
         </ul>
         <div className=" flex items-end w-full h-full  ">
           <button className="pl-12 py-10 text-3xl text-neutral-500 mb-5 flex flex-row items-center gap-3  ">
