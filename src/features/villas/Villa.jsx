@@ -1,17 +1,30 @@
+import { HiArrowLongRight } from "react-icons/hi2";
+
 function Villa({ villa }) {
-  const { name, capacity, price, image } = villa;
+  const { name, capacity, price, image, description } = villa;
 
   return (
     <div className="w-[400px]">
       <div>
         <img
-          className=" rounded-t-3xl min-w-[400px]  h-[300px] object-cover "
+          className=" rounded-xl min-w-[400px]  h-[300px] object-cover "
           src={image}
         />
       </div>
 
-      <div className=" rounded-b-3xl w-[400px]  h-[200px] bg-stone-200 ">
-        <p>{name}</p>
+      <div className=" w-[400px]  h-[200px">
+        <p className="text-neutral-800 text-xl py-2 italic leading-5  ">
+          Villa: {name}
+        </p>
+        <p className="text-neutral-600 text-lg font-light italic leading-6  ">
+          Capacity: {capacity} people
+        </p>
+        <p className="text-neutral-600 text-lg font-light italic leading-6">
+          Price: ${price} per night
+        </p>
+        <button className=" text-neutral-500 text-lg font-light italic flex flex-row items-center gap-2 ">
+          See more details <HiArrowLongRight />
+        </button>
       </div>
     </div>
   );
