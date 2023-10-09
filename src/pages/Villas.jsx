@@ -1,6 +1,5 @@
 import { villas } from "../data/villas";
 import Villa from "../features/villas/Villa";
-import { HiPlus } from "react-icons/hi2";
 
 function Villas() {
   return (

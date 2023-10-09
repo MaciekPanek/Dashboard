@@ -1,7 +1,7 @@
 import { HiArrowLongRight } from "react-icons/hi2";
 
 function Villa({ villa }) {
-  const { name, capacity, price, image, description } = villa;
+  const { name, capacity, price, image } = villa;
 
   return (
     <div className="w-[400px]">
