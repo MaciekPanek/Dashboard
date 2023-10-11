@@ -6,6 +6,7 @@ import Reservations from "./pages/Reservations";
 import Guests from "./pages/Guests";
 import Villas from "./pages/Villas";
 import Settings from "./pages/Settings";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient();
+
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }

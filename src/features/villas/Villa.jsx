@@ -8,7 +8,7 @@ function Villa({ villa }) {
       <div>
         <img
           className=" rounded-xl min-w-[400px]  h-[300px] object-cover "
-          src={image}
+          src={"photo.jpeg"}
         />
       </div>
 

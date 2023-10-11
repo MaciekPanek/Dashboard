@@ -1,7 +1,15 @@
-import { villas } from "../data/villas";
+// import { villas } from "../data/villas";
 import Villa from "../features/villas/Villa";
+import { useVillas } from "../hooks/useVillas";
 
 function Villas() {
+  const { isLoading, villas } = useVillas();
+
+  if (isLoading || villas === undefined) {
+    return <div>Loading...</div>; // or render a loading indicator
+  }
+  console.log(villas);
+
   return (
     <section className="grid grid-cols-fluid gap-10  bg-stone-100 min-h-screen p-20">
       {villas.map((villa) => (
