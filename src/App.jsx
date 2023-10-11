@@ -7,6 +7,7 @@ import Guests from "./pages/Guests";
 import Villas from "./pages/Villas";
 import Settings from "./pages/Settings";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AddNewVilla from "./features/villas/AddNewVilla";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/villas",
         element: <Villas />,
+      },
+      {
+        path: "/villas/newvilla",
+        element: <AddNewVilla />,
       },
       {
         path: "/guests",

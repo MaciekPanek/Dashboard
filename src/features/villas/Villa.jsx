@@ -4,11 +4,11 @@ function Villa({ villa }) {
   const { name, capacity, price, image } = villa;
 
   return (
-    <div className="w-[400px]">
+    <div className="w-[400px] hover:cursor-pointer hover:scale-105 ease-in-out duration-300 h-max ">
       <div>
         <img
           className=" rounded-xl min-w-[400px]  h-[300px] object-cover "
-          src={"photo.jpeg"}
+          src="photo.jpeg"
         />
       </div>
 
