@@ -9,7 +9,6 @@ function Villas() {
   if (isLoading || villas === undefined) {
     return <div>Loading...</div>; // or render a loading indicator
   }
-  console.log(villas);
 
   return (
     <section className="grid grid-cols-fluid gap-10  bg-stone-100 min-h-screen p-20">
