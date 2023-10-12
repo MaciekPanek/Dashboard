@@ -19,8 +19,8 @@ function AddNewVilla() {
       >
         <input {...register("Name")} placeholder="Name" type="text" />
         <input {...register("Capacity")} placeholder="Capacity" type="text" />
-        <input {...register("Img")} placeholder="Img" type="file" />
         <input {...register("Price")} placeholder="Price" type="number" />
+        <input {...register("Img")} placeholder="Img" type="file" />
         <textarea
           {...register("Description")}
           placeholder="Description"
