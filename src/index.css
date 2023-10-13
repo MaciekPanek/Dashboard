@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  body {
-    /* @apply; */
+  .inputStyle {
+    @apply h-12 rounded-full w-1/2 px-3 placeholder:text-neutral-400 text-neutral-500 outline-none;
   }
 }
