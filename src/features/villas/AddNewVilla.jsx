@@ -26,10 +26,10 @@ function AddNewVilla() {
           placeholder="Description"
           type="text"
         />
+        <button type="submit" className="bg-neutral-500">
+          Create new villa
+        </button>
       </form>
-      <button type="submit" className="bg-neutral-500">
-        Create new villa
-      </button>
     </section>
   );
 }
