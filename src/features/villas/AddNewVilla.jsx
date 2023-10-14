@@ -75,6 +75,7 @@ function AddNewVilla() {
               className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
             >
               Create new villa <HiOutlineDocumentCheck />
+              Create new villa <HiOutlineDocumentCheck />
             </button>
           </FormRow>
         </form>
