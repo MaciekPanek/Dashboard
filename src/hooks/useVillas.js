@@ -7,7 +7,6 @@ export function useVillas() {
     data: villas,
     error,
   } = useQuery({ queryKey: ["Villas"], queryFn: getVillas });
-
   // console.log(villas);
 
   return { isLoading, error, villas };
