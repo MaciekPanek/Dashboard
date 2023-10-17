@@ -11,18 +11,18 @@ export async function getVillas() {
   return data;
 }
 
-export async function createNewVilla(newVilla) {
-  const { data, error } = await supabase
-    .from("Villas")
-    .insert([{ ...newVilla }]);
+// export async function createNewVilla(newVilla) {
+//   const { data, error } = await supabase
+//     .from("Villas")
+//     .insert([{ ...newVilla }]);
 
-  if (error) {
-    console.error(error);
-    throw new Error("Villa could not be created");
-  }
+//   if (error) {
+//     console.error(error);
+//     throw new Error("Villa could not be created");
+//   }
 
-  return data;
-}
+//   return data;
+// }
 
 export async function createEditVilla(newVilla, id) {
   const hasImagePath = newVilla.image?.startsWith?.(supabaseUrl);
@@ -54,7 +54,7 @@ export async function createEditVilla(newVilla, id) {
 
   if (error) {
     console.error(error);
-    throw new Error("Cabins could not be created");
+    throw new Error("Villa could not be created");
   }
 
   // 2. Upload Image
@@ -69,7 +69,7 @@ export async function createEditVilla(newVilla, id) {
     await supabase.from("Villas").delete().eq("id", data.id);
     console.error(storageError);
     throw new Error(
-      "Cabin image could not be uploaded and cabin was not created"
+      "Villa image could not be uploaded and cabin was not created"
     );
   }
 
@@ -81,7 +81,7 @@ export async function deleteCabin(id) {
 
   if (error) {
     console.error(error);
-    throw new Error("Cabins could not be deleted");
+    throw new Error("Villa could not be deleted");
   }
 
   return data;
