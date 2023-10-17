@@ -1,12 +1,10 @@
 import { useForm } from "react-hook-form";
-import FormInput from "../../ui/FormInput";
 import FormRow from "./FormRow";
 import {
   HiOutlineDocumentCheck,
   HiOutlineArrowUturnLeft,
 } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { useCreateVilla } from "../../hooks/useCreateVilla";
 
 function AddNewVilla() {
@@ -66,6 +64,8 @@ function AddNewVilla() {
             <input
               {...register("image")}
               placeholder="image"
+              id="image"
+              accept="image/*"
               type="file"
               className=" mb-3 px-1 file:rounded-full file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 file:px-6 file:py-2 file:mr-5 file:hover:cursor-pointer "
             />

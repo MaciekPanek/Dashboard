@@ -1,4 +1,5 @@
 import { HiArrowLongRight } from "react-icons/hi2";
+import { supabaseUrl } from "../../services/supabase";
 
 function Villa({ villa }) {
   const { name, capacity, price, image } = villa;
