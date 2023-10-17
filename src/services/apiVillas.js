@@ -25,52 +25,64 @@ export async function createNewVilla(newVilla) {
 }
 
 export async function createEditVilla(newVilla, id) {
-  const hasImagePath = newVilla?.image?.startsWith?.(supabaseUrl);
+  const hasImagePath = newVilla.image?.startsWith?.(supabaseUrl);
 
-  const imageName = `${Math.random()}-${newVilla.image[0].name}`.replaceAll(
+  const imageName = `${Math.random()}-${newVilla.image.name}`.replaceAll(
     "/",
     ""
   );
 
   console.log(newVilla);
-  const imagePath = hasImagePath
+  console.log(imageName);
+
+  const imagePatch = hasImagePath
     ? newVilla.image
     : `${supabaseUrl}/storage/v1/object/public/villa-images/${imageName}`;
 
-  console.log(imageName);
+  console.log(imagePatch);
 
-  // 1. Create/edit villa
+  // 1. Create/edit Cabin
   let query = supabase.from("Villas");
 
   // A) CREATE
-  if (!id) query = query.insert([{ ...newVilla, image: imagePath }]);
+  if (!id) query = query.insert([{ ...newVilla, image: imagePatch }]);
 
   // B) EDIT
-  if (id) query = query.update({ ...newVilla, image: imagePath }).eq("id", id);
+  if (id) query = query.update({ ...newVilla, image: imagePatch }).eq("id", id);
 
   const { data, error } = await query.select().single();
 
   if (error) {
     console.error(error);
-    throw new Error("Villa could not be created");
+    throw new Error("Cabins could not be created");
   }
 
-  // 2. Upload image
-  if (hasImagePath) return data;
+  // 2. Upload Image
+  if (hasImagePath) return;
 
   const { error: storageError } = await supabase.storage
     .from("villa-images")
     .upload(imageName, newVilla.image);
 
-  // 3. Delete the villa IF there was an error uplaoding image
+  // 3. Delete cabin if there was an error uploading image
   if (storageError) {
     await supabase.from("Villas").delete().eq("id", data.id);
     console.error(storageError);
     throw new Error(
-      "Villa image could not be uploaded and the villa was not created"
+      "Cabin image could not be uploaded and cabin was not created"
     );
   }
-  console.log(data);
+
+  return data;
+}
+
+export async function deleteCabin(id) {
+  const { data, error } = await supabase.from("Villas").delete().eq("id", id);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Cabins could not be deleted");
+  }
 
   return data;
 }
