@@ -32,16 +32,11 @@ export async function createEditVilla(newVilla, id) {
     ""
   );
 
-  console.log(newVilla);
-  console.log(imageName);
-
   const imagePatch = hasImagePath
     ? newVilla.image
     : `${supabaseUrl}/storage/v1/object/public/villa-images/${imageName}`;
 
-  console.log(imagePatch);
-
-  // 1. Create/edit Cabin
+  // 1. Create/edit Villa
   let query = supabase.from("Villas");
 
   // A) CREATE
@@ -64,7 +59,7 @@ export async function createEditVilla(newVilla, id) {
     .from("villa-images")
     .upload(imageName, newVilla.image);
 
-  // 3. Delete cabin if there was an error uploading image
+  // 3. Delete villa if there was an error uploading image
   if (storageError) {
     await supabase.from("Villas").delete().eq("id", data.id);
     console.error(storageError);
@@ -76,7 +71,7 @@ export async function createEditVilla(newVilla, id) {
   return data;
 }
 
-export async function deleteCabin(id) {
+export async function deleteVilla(id) {
   const { data, error } = await supabase.from("Villas").delete().eq("id", id);
 
   if (error) {

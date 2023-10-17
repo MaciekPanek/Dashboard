@@ -8,10 +8,10 @@ export function useCreateVilla() {
   const { mutate: createVilla, isLoading: isCreating } = useMutation({
     mutationFn: createEditVilla,
     onSuccess: () => {
-      // toast.success("New villa successfully created");
+      toast.success("New villa successfully created");
       queryClient.invalidateQueries({ queryKey: ["Villas"] });
     },
-    // onError: (err) => toast.error(err.message),
+    onError: (err) => toast.error(err.message),
   });
 
   return { isCreating, createVilla };
