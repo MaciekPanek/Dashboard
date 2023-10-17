@@ -21,6 +21,7 @@ function AddNewVilla() {
   const onSubmit = (data) => {
     const image = typeof data.image === "string" ? data.image : data.image[0];
     console.log({ ...data, image: image });
+    console.log({ ...data, image: image });
     createVilla({ ...data, image: image });
   };
 
