@@ -22,6 +22,7 @@ function AddNewVilla() {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
     createVilla({ ...data, image: image });
+    navigate(-1);
   };
 
   return (
