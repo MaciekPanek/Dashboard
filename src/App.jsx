@@ -9,6 +9,7 @@ import Settings from "./pages/Settings";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AddNewVilla from "./features/villas/AddNewVilla";
 import toast, { Toaster } from "react-hot-toast";
+import VillaDetails from "./features/villas/VillaDetails";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/villas",
         element: <Villas />,
+      },
+      {
+        path: "/villas/:villaId",
+        element: <VillaDetails />,
       },
       {
         path: "/villas/newvilla",

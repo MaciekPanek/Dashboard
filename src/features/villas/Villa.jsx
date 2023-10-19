@@ -1,7 +1,8 @@
 import { HiArrowLongRight } from "react-icons/hi2";
+import { NavLink } from "react-router-dom";
 
 function Villa({ villa }) {
-  const { name, capacity, price, image } = villa;
+  const { name, capacity, price, image, id } = villa;
 
   return (
     <div className="w-[400px] hover:cursor-pointer  h-max ">
@@ -23,9 +24,12 @@ function Villa({ villa }) {
         <p className="text-neutral-600 text-lg font-light italic leading-6">
           Price: ${price} per night
         </p>
-        <button className=" text-neutral-500 text-lg font-light italic flex flex-row items-center gap-2 hover:scale-105 ease-in-out duration-300 ">
+        <NavLink
+          to={`/villas/${id}`}
+          className=" text-neutral-500 text-lg font-light italic flex flex-row items-center gap-2 hover:scale-105 ease-in-out duration-300 "
+        >
           See more details <HiArrowLongRight />
-        </button>
+        </NavLink>
       </div>
     </div>
   );
