@@ -5,24 +5,22 @@ export async function getVillas() {
 
   if (error) {
     console.error(error);
-    throw new Error("Villa could not be loaded");
+    throw new Error("Villas could not be loaded");
   }
 
   return data;
 }
 
-// export async function createNewVilla(newVilla) {
-//   const { data, error } = await supabase
-//     .from("Villas")
-//     .insert([{ ...newVilla }]);
+export async function getVillaDetails() {
+  const { data: villa, error } = await supabase.from("Villas").select("47");
 
-//   if (error) {
-//     console.error(error);
-//     throw new Error("Villa could not be created");
-//   }
+  if (error) {
+    console.error(error);
+    throw new Error("Villa could not be loaded");
+  }
 
-//   return data;
-// }
+  return { villa, error };
+}
 
 export async function createEditVilla(newVilla, id) {
   const hasImagePath = newVilla.image?.startsWith?.(supabaseUrl);
