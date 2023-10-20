@@ -1,8 +1,15 @@
 import { HiArrowLongRight } from "react-icons/hi2";
 import { NavLink } from "react-router-dom";
+// import { useVillaDetails } from "../../context/VillaDetailsContext";
 
 function Villa({ villa }) {
+  // const { villaDetails, setVillaDetails } = useVillaDetails();
+
   const { name, capacity, price, image, id } = villa;
+
+  // function handleShowDetails() {
+  //   setVillaDetails([...villaDetails, villa]);
+  // }
 
   return (
     <div className="w-[400px] hover:cursor-pointer  h-max ">
@@ -25,6 +32,7 @@ function Villa({ villa }) {
           Price: ${price} per night
         </p>
         <NavLink
+          // onClick={handleShowDetails}
           to={`/villas/${id}`}
           className=" text-neutral-500 text-lg font-light italic flex flex-row items-center gap-2 hover:scale-105 ease-in-out duration-300 "
         >

@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AddNewVilla from "./features/villas/AddNewVilla";
 import toast, { Toaster } from "react-hot-toast";
 import VillaDetails from "./features/villas/VillaDetails";
+// import { VillaDetailsProvider } from "./context/VillaDetailsContext";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,7 @@ const queryClient = new QueryClient();
 
 export default function App() {
   return (
+    // <VillaDetailsProvider>
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
       <Toaster
@@ -76,5 +78,6 @@ export default function App() {
         }}
       />
     </QueryClientProvider>
+    // </VillaDetailsProvider>
   );
 }
