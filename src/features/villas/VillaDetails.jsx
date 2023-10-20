@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 // import { useVillaDetails } from "../../context/VillaDetailsContext";
 import { useVillas } from "../../hooks/useVillas";
 import EditVilla from "./EditVilla";
+import Loader from "../../ui/Loader";
 
 function VillaDetails() {
   // const { villaDetails } = useVillaDetails();
@@ -11,9 +12,12 @@ function VillaDetails() {
   const numericVillaId = parseInt(villaId, 10);
   const selectedVilla = villas?.find((villa) => villa?.id === numericVillaId);
 
+  if (isLoading) return <Loader />;
+
   if (!selectedVilla) {
-    return <div>Villa not found</div>;
+    return <Loader />;
   }
+
   const { name, capacity, price, image, id, description } = selectedVilla;
 
   return (

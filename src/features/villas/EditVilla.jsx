@@ -6,6 +6,7 @@ import {
   HiOutlineArrowUturnLeft,
   HiOutlineDocumentCheck,
 } from "react-icons/hi2";
+import Loader from "../../ui/Loader";
 
 function EditVilla() {
   const navigate = useNavigate();
@@ -24,6 +25,8 @@ function EditVilla() {
     createVilla({ ...data, image: image });
     navigate(-1);
   };
+
+  if (isCreating) return <Loader />;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col w-3/4 ">
