@@ -11,17 +11,6 @@ export async function getVillas() {
   return data;
 }
 
-// export async function getVillaDetails(id) {
-//   const { data: villa, error } = await supabase.from("Villas").select(id);
-
-//   if (error) {
-//     console.error(error);
-//     throw new Error("Villa could not be loaded");
-//   }
-
-//   return { villa, error };
-// }
-
 export async function createEditVilla(newVilla, id) {
   const hasImagePath = newVilla.image?.startsWith?.(supabaseUrl);
 
