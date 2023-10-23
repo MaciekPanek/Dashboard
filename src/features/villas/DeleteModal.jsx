@@ -32,6 +32,7 @@ function DeleteModal() {
           >
             Close
           </button>
+
           <button className="bg-red-500  py-2 px-5 rounded-full text-2xl text-red-200 hover:scale-105 duration-300">
             Delete
           </button>
