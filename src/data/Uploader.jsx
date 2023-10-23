@@ -55,27 +55,18 @@ async function createBookings() {
   const finalBookings = bookings.map((booking) => {
     // Here relying on the order of villas, as they don't have and ID yet
     const villa = villas.at(booking.villaId - 1);
-    const numNights = subtractDates(booking.endDate, booking.startDate);
-    const villaPrice = numNights * (villa.regularPrice - villa.discount);
-    const extrasPrice = booking.hasBreakfast
-      ? numNights * 15 * booking.numGuests
-      : 0; // hardcoded breakfast price
-    const totalPrice = villaPrice + extrasPrice;
+    const numNights = subtractDates(booking.arrivalDate, booking.departureDate);
+    const villaPrice = numNights * villa.price;
 
     return {
       ...booking,
-      numNights,
       villaPrice,
-      extrasPrice,
-      totalPrice,
       guestId: allGuestIds.at(booking.guestId - 1),
       villaId: allvillaIds.at(booking.villaId - 1),
     };
   });
 
-  console.log(finalBookings);
-
-  const { error } = await supabase.from("bookings").insert(finalBookings);
+  const { error } = await supabase.from("Bookings").insert(finalBookings);
   if (error) console.log(error.message);
 }
 
