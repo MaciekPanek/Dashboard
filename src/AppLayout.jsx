@@ -3,7 +3,7 @@ import NavBar from "./features/navigation/Navbar";
 
 function AppLayout() {
   return (
-    <div className="flex flex-row">
+    <div className=" flex flex-row ">
       <NavBar />
 
       <main className=" absolute left-[20%] flex-1 w-4/5">
