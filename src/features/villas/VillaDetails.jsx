@@ -23,14 +23,21 @@ function VillaDetails() {
   return (
     <section className="bg-stone-100 min-h-screen p-20 flex flex-col gap-20 ">
       <div className="flex gap-10 ">
-        <div className="">
-          <img src={image} className="max-h-[400px]" />
-        </div>
+        <img src={image} className="max-h-[20vw] rounded-lg  " />
+
         <div className="w-1/2">
-          <div>{name}</div>
-          <div>{capacity}</div>
-          <div>{price}</div>
-          <div>{description}</div>
+          <div className="text-neutral-600 text-3xl py-2 italic">
+            Villa: {name}
+          </div>
+          <div className="text-neutral-600 text-xl py-2 italic leading-5 ">
+            Price: ${price} per night{" "}
+          </div>
+          <div className="text-neutral-600 text-xl py-2 italic leading-5">
+            Capacity: {capacity}
+          </div>
+          <div className="text-neutral-600 text-lg py-2 italic leading-5">
+            {description}
+          </div>
         </div>
       </div>
       <div className="flex justify-center ">

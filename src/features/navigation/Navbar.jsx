@@ -15,7 +15,7 @@ function Navbar() {
       <nav className="bg-stone-100 h-screen w-1/5 flex items-start border-r-2 border-r-neutral-300   flex-col  fixed ">
         <div className="flex items-center gap-5 border-b-2 border-b-neutral-300 py-5 w-full pl-12  ">
           <img
-            src="/public/photo.jpeg"
+            src="/photo.jpeg"
             className="w-20 h-20 rounded-full object-cover  "
           />
           <p className="text-3xl text-neutral-700 ">Name</p>

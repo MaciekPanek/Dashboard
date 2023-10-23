@@ -5,74 +5,84 @@
 export const villas = [
   {
     name: "Agatha",
-    capacity: 2,
-    price: 250,
+    capacity: 5,
+    price: 750,
     image: "photo.jpeg",
     description:
-      "Discover the ultimate luxury getaway for couples in the cozy wooden cabin 001. Nestled in a picturesque forest, this stunning cabin offers a secluded and intimate retreat. Inside, enjoy modern high-quality wood interiors, a comfortable seating area, a fireplace and a fully-equipped kitchen. The plush king-size bed, dressed in fine linens guarantees a peaceful nights sleep. Relax in the spa-like shower and unwind on the private deck with hot tub.",
+      "Villa Agatha, a charming retreat named after its timeless beauty, welcomes up to 5 guests with open arms. Tucked away in a serene corner, this cozy haven exudes a rustic charm that perfectly complements its surroundings. Step inside, and you'll find a spacious living area adorned with warm, earthy tones and traditional decor. The bedrooms are designed for ultimate comfort, promising restful nights. Outside, a private garden and a quaint terrace provide a space for relaxation and enjoying the peaceful ambiance. If you're seeking a place to escape from the hustle and bustle, Villa Agatha is the perfect choice for a tranquil and rejuvenating vacation.",
   },
   {
-    name: "Bella",
-    capacity: 2,
-    price: 350,
+    name: "Isabelle",
+    capacity: 7,
+    price: 1200,
     image: "photo.jpeg",
     description:
-      "Escape to the serenity of nature and indulge in luxury in our cozy cabin 002. Perfect for couples, this cabin offers a secluded and intimate retreat in the heart of a picturesque forest. Inside, you will find warm and inviting interiors crafted from high-quality wood, a comfortable living area, a fireplace and a fully-equipped kitchen. The luxurious bedroom features a plush king-size bed and spa-like shower. Relax on the private deck with hot tub and take in the beauty of nature.",
+      "Elegance and opulence define Villa Isabelle, a luxurious retreat capable of accommodating up to 7 guests. This splendid villa stands as a sanctuary of grandeur and style. From the moment you enter, you'll be captivated by the tasteful and modern design, with spacious rooms and upscale amenities. The living area is a masterpiece of comfort and sophistication, ideal for both relaxation and entertaining. The bedrooms offer a sumptuous escape with plush furnishings and large windows to let in the natural beauty of the surroundings. Outside, a private pool and a meticulously landscaped garden provide a picturesque setting for leisure and alfresco dining. Villa Isabelle promises a vacation of pure luxury and indulgence.",
   },
   {
-    name: "Clarice",
-    capacity: 4,
-    price: 300,
-    image: "photo.jpeg",
-    description:
-      "Experience luxury family living in our medium-sized wooden cabin 003. Perfect for families of up to 4 people, this cabin offers a comfortable and inviting space with all modern amenities. Inside, you will find warm and inviting interiors crafted from high-quality wood, a comfortable living area, a fireplace, and a fully-equipped kitchen. The bedrooms feature plush beds and spa-like bathrooms. The cabin has a private deck with a hot tub and outdoor seating area, perfect for taking in the natural surroundings.",
-  },
-  {
-    name: "Daisy",
-    capacity: 4,
-    price: 500,
-    image: "photo.jpeg",
-    description:
-      "Indulge in the ultimate luxury family vacation in this medium-sized cabin 004. Designed for families of up to 4, this cabin offers a sumptuous retreat for the discerning traveler. Inside, the cabin boasts of opulent interiors crafted from the finest quality wood, a comfortable living area, a fireplace, and a fully-equipped gourmet kitchen. The bedrooms are adorned with plush beds and spa-inspired en-suite bathrooms. Step outside to your private deck and soak in the natural surroundings while relaxing in your own hot tub.",
-  },
-  {
-    name: "Eva",
-    capacity: 6,
-    price: 350,
-    image: "photo.jpeg",
-    description:
-      "Enjoy a comfortable and cozy getaway with your group or family in our spacious cabin 005. Designed to accommodate up to 6 people, this cabin offers a secluded retreat in the heart of nature. Inside, the cabin features warm and inviting interiors crafted from quality wood, a living area with fireplace, and a fully-equipped kitchen. The bedrooms are comfortable and equipped with en-suite bathrooms. Step outside to your private deck and take in the natural surroundings while relaxing in your own hot tub.",
-  },
-  {
-    name: "Florence",
-    capacity: 6,
-    price: 800,
-    image: "photo.jpeg",
-    description:
-      "Experience the epitome of luxury with your group or family in our spacious wooden cabin 006. Designed to comfortably accommodate up to 6 people, this cabin offers a lavish retreat in the heart of nature. Inside, the cabin features opulent interiors crafted from premium wood, a grand living area with fireplace, and a fully-equipped gourmet kitchen. The bedrooms are adorned with plush beds and spa-like en-suite bathrooms. Step outside to your private deck and soak in the natural surroundings while relaxing in your own hot tub.",
-  },
-  {
-    name: "Gloria",
+    name: "Eleanor",
     capacity: 8,
-    price: 600,
+    price: 850,
     image: "photo.jpeg",
     description:
-      "Accommodate your large group or multiple families in the spacious and grand wooden cabin 007. Designed to comfortably fit up to 8 people, this cabin offers a secluded retreat in the heart of beautiful forests and mountains. Inside, the cabin features warm and inviting interiors crafted from quality wood, multiple living areas with fireplace, and a fully-equipped kitchen. The bedrooms are comfortable and equipped with en-suite bathrooms. The cabin has a private deck with a hot tub and outdoor seating area, perfect for taking in the natural surroundings.",
+      "Villa Eleanor, a welcoming retreat for up to 8 guests, is where comfort and style harmoniously coexist. The villa's contemporary design and well-thought-out layout ensure a memorable escape. The open-plan living area is designed for relaxation and conviviality, with plush seating and abundant natural light. The bedrooms are spacious and thoughtfully decorated, offering a serene place to unwind after a day of exploration. Step outside onto the sun-drenched terrace and admire the surrounding beauty, or take a dip in the private pool to cool off in the warm sun. Villa Eleanor is the perfect choice for those seeking a vacation that blends modern comfort with the tranquility of the Mediterranean.",
   },
   {
-    name: "Hermiona",
+    name: "Clara",
+    capacity: 6,
+    price: 950,
+    image: "photo.jpeg",
+    description:
+      "Villa Clara, a delightful haven for up to 6 guests, boasts an inviting atmosphere that strikes the perfect balance between comfort and elegance. The villa's picturesque location and well-appointed interiors create an ambiance that is both cozy and refined. The open-concept living and dining area is bathed in natural light, making it a welcoming space for relaxation and socializing. The bedrooms are beautifully furnished and provide a peaceful sanctuary for a good night's sleep. Outdoors, the lush garden and shaded terrace invite you to bask in the gentle Mediterranean breeze. Villa Clara is a superb choice for a tranquil getaway where every detail is designed to enhance your stay.",
+  },
+  {
+    name: "Sophia",
+    capacity: 4,
+    price: 1100,
+    image: "photo.jpeg",
+    description:
+      "Villa Sophia, a chic and refined retreat for up to 4 guests, is the epitome of sophistication and style. From the moment you step inside, you'll be enveloped by an atmosphere of contemporary elegance. The living space features designer furnishings and a minimalist aesthetic, creating a serene ambiance. The bedrooms are spacious and exquisitely appointed, ensuring a restful stay. Step outside to the beautifully landscaped garden and take in the scenic beauty of the surroundings. Villa Sophia is a delightful choice for those seeking a peaceful and stylish vacation in the heart of the Mediterranean.",
+  },
+  {
+    name: "Olivia",
+    capacity: 9,
+    price: 750,
+    image: "photo.jpeg",
+    description:
+      "Villa Olivia, a spacious retreat for up to 9 guests, offers an idyllic escape for those who appreciate room to roam. The villa's vast living areas, both indoors and outdoors, create a sense of openness and freedom. The interior design is modern and comfortable, with a large, well-equipped kitchen and a cozy lounge area. The bedrooms are roomy and well-appointed, ensuring a good night's sleep for everyone. Outside, a private garden with a swimming pool and sun loungers beckons for relaxation and fun in the sun. Villa Olivia promises an unforgettable vacation where spacious luxury meets the beauty of the Mediterranean landscape.",
+  },
+  {
+    name: "Emily",
     capacity: 10,
+    price: 1100,
+    image: "photo.jpeg",
+    description:
+      "Villa Emily, a grandiose estate for up to 10 guests, is a testament to opulence and space. This retreat combines elegance with modern comfort to ensure a lavish getaway. The grand living and dining areas are designed for both relaxation and entertaining, with sumptuous furnishings and exquisite decor. The bedrooms are generously sized and offer a luxurious retreat for a restful night's sleep. Outdoors, a large private pool and a beautifully landscaped garden create an oasis for leisure and alfresco dining. Villa Emily is the ultimate choice for those seeking a vacation filled with luxury, comfort, and style.",
+  },
+  {
+    name: "Amelia",
+    capacity: 5,
+    price: 900,
+    image: "photo.jpeg",
+    description:
+      "Villa Amelia, a charming abode for up to 5 guests, is the perfect choice for those seeking a cozy and inviting escape. The villa's interiors are designed for comfort and simplicity, with a warm and welcoming atmosphere. The bedrooms are beautifully furnished and create a serene environment for a peaceful night's sleep. Outside, the private garden and terrace provide a space to relax and enjoy the tranquility of the Mediterranean surroundings. Villa Amelia is the ideal retreat for a laid-back vacation away from the hustle and bustle.",
+  },
+  {
+    name: "Ava",
+    capacity: 7,
+    price: 1200,
+    image: "photo.jpeg",
+    description:
+      "Villa Ava, a haven of luxury and leisure for up to 7 guests, promises an unforgettable vacation filled with opulence and relaxation. The villa's upscale amenities and breathtaking views set the stage for an extraordinary getaway. The spacious living area features elegant furnishings and an open layout, making it perfect for relaxation and entertainment. The bedrooms are luxurious and tastefully decorated, offering a restful haven after a day of adventure. Outside, the private pool and extensive terrace provide an oasis for basking in the sun and taking in the panoramic vistas. Villa Ava is the ultimate choice for a vacation that combines elegance and natural beauty.",
+  },
+  {
+    name: "Charlotte",
+    capacity: 8,
     price: 1400,
     image: "photo.jpeg",
     description:
-      "Experience the epitome of luxury and grandeur with your large group or multiple families in our grand cabin 008. This cabin offers a lavish retreat that caters to all your needs and desires. The cabin features an opulent design and boasts of high-end finishes, intricate details and the finest quality wood throughout. Inside, the cabin features multiple grand living areas with fireplaces, a formal dining area, and a gourmet kitchen that is a chef's dream. The bedrooms are designed for ultimate comfort and luxury, with plush beds and en-suite spa-inspired bathrooms. Step outside and immerse yourself in the beauty of nature from your private deck, featuring a luxurious hot tub and ample seating areas for ultimate relaxation and enjoyment.",
-  },
-  {
-    name: "Izabelle",
-    capacity: 10,
-    price: 1400,
-    image: "photo.jpeg",
-    description:
-      "Experience the epitome of luxury and grandeur with your large group or multiple families in our grand cabin 008. This cabin offers a lavish retreat that caters to all your needs and desires. The cabin features an opulent design and boasts of high-end finishes, intricate details and the finest quality wood throughout. Inside, the cabin features multiple grand living areas with fireplaces, a formal dining area, and a gourmet kitchen that is a chef's dream. The bedrooms are designed for ultimate comfort and luxury, with plush beds and en-suite spa-inspired bathrooms. Step outside and immerse yourself in the beauty of nature from your private deck, featuring a luxurious hot tub and ample seating areas for ultimate relaxation and enjoyment.",
+      "Villa Charlotte is a regal retreat accommodating up to 8 guests. Its lavish design and splendid location make it the perfect choice for those seeking the utmost in luxury. The grand living space is adorned with opulent furnishings and boasts a palatial ambiance, ideal for both relaxation and entertaining. The bedrooms are generously sized and offer a sumptuous sanctuary for a restful night's sleep. Step outside onto the expansive terrace and enjoy the panoramic views, or take a dip in the private pool to cool off in the Mediterranean sun. Villa Charlotte promises a vacation of pure extravagance and indulgence.",
   },
 ];
+
+export default villas;
