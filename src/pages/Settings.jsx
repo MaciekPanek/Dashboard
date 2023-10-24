@@ -1,5 +1,5 @@
 function Settings() {
-  return <div>Settings</div>;
+  return <section className=" bg-stone-100 h-screen ">Settings</section>;
 }
 
 export default Settings;
