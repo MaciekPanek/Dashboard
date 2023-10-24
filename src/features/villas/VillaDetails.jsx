@@ -6,19 +6,18 @@ import VillaDescription from "./VillaDescription";
 import { HiOutlinePencilSquare, HiOutlineTrash } from "react-icons/hi2";
 import { useVillaDetails } from "../../context/VillaDetailsContext";
 import DeleteModal from "./DeleteModal";
-import { createPortal } from "react-dom";
 
 function VillaDetails() {
   const { villaId } = useParams();
   const { isLoading, villas } = useVillas();
   const numericVillaId = parseInt(villaId, 10);
   const selectedVilla = villas?.find((villa) => villa?.id === numericVillaId);
+
   const {
     isEditModalVisible,
     isDeleteModalVisible,
     handleClose,
     handleOpen,
-    // handleDeleteModalToggle,
     handleEditModalToggle,
   } = useVillaDetails();
 
@@ -40,8 +39,13 @@ function VillaDetails() {
         >
           Delete villa <HiOutlineTrash />
         </button>
-        {isDeleteModalVisible &&
-          createPortal(<DeleteModal onClose={handleClose} />, document.body)}
+        {isDeleteModalVisible && (
+          <DeleteModal
+            onClose={handleClose}
+            villaId={villaId}
+            // onClick={() => handleDelete(villaId)}
+          />
+        )}
       </div>
       <div className="flex justify-center ">
         {isEditModalVisible && <EditVilla selectedVilla={selectedVilla} />}

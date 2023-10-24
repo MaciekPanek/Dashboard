@@ -2,8 +2,9 @@ import { HiXMark } from "react-icons/hi2";
 import { useVillaDetails } from "../../context/VillaDetailsContext";
 import { createPortal } from "react-dom";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
+import { useDeleteVilla } from "../../hooks/useDeleteVilla";
 
-function DeleteModal() {
+function DeleteModal({ onClick }) {
   const { isDeleteModalVisible, handleClose } = useVillaDetails();
 
   const ref = useOutsideClick(handleClose);
@@ -16,7 +17,7 @@ function DeleteModal() {
     <div className="modal-container">
       <div
         ref={ref}
-        className="w-[30%] h-[300px] bg-stone-200  relative rounded-lg "
+        className="w-[30%] h-[300px] bg-stone-100 border border-neutral-400  relative rounded-3xl  "
       >
         <HiXMark
           onClick={handleClose}
@@ -32,7 +33,10 @@ function DeleteModal() {
           >
             Close
           </button>
-          <button className="bg-red-500  py-2 px-5 rounded-full text-2xl text-red-200 hover:scale-105 duration-300">
+          <button
+            onClick={onClick}
+            className="bg-red-500  py-2 px-5 rounded-full text-2xl text-red-200 hover:scale-105 duration-300"
+          >
             Delete
           </button>
         </div>

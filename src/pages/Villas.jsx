@@ -2,12 +2,13 @@
 import { NavLink } from "react-router-dom";
 import Villa from "../features/villas/Villa";
 import { useVillas } from "../hooks/useVillas";
+import Loader from "../ui/Loader";
 
 function Villas() {
   const { isLoading, villas } = useVillas();
 
   if (isLoading || villas === undefined) {
-    return <div>Loading...</div>; // or render a loading indicator
+    return <Loader />;
   }
 
   return (

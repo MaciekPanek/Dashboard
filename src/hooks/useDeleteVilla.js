@@ -8,7 +8,7 @@ export function useDeleteVilla() {
   const { mutate: deleteVilla, isLoading: isDeleting } = useMutation({
     mutationFn: apiDeleteVilla,
     onSuccess: () => {
-      toast.success("Villa successfully created");
+      toast.success("Villa successfully deleted");
       queryClient.invalidateQueries({ queryKey: ["Villas"] });
     },
     onError: (err) => toast.error(err.message),

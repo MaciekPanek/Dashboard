@@ -59,12 +59,12 @@ export async function createEditVilla(newVilla, id) {
 }
 
 export async function deleteVilla(id) {
-  const { data, error } = await supabase.from("Villas").delete().eq("id", id);
+  const { error } = await supabase.from("Villas").delete().eq("id", id);
 
   if (error) {
     console.error(error);
     throw new Error("Villa could not be deleted");
   }
 
-  return data;
+  return error;
 }
