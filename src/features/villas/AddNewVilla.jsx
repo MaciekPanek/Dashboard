@@ -9,7 +9,7 @@ import { useCreateVilla } from "../../hooks/useCreateVilla";
 
 function AddNewVilla() {
   const navigate = useNavigate();
-  const { isCreating, createVilla } = useCreateVilla();
+  const { createVilla } = useCreateVilla();
 
   const {
     register,

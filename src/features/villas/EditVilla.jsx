@@ -13,7 +13,7 @@ import { useEditVilla } from "../../hooks/useEditVilla";
 function EditVilla({ selectedVilla }) {
   const navigate = useNavigate();
   const { isCreating, createVilla } = useCreateVilla();
-  const { editVilla, isEditing } = useEditVilla();
+  const { editVilla } = useEditVilla();
 
   const { id } = selectedVilla || { id: null };
 
