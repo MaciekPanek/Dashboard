@@ -69,11 +69,11 @@ export default function App() {
               duration: 5000,
             },
             style: {
-              fontSize: "16px",
+              fontSize: "20px",
               maxWidth: "500px",
               padding: "16px 24px",
-              backgroundColor: "var(--color-grey-0)",
-              color: "var(--color-grey-700)",
+              backgroundColor: "#e7e5e4",
+              color: "#525252",
             },
           }}
         />

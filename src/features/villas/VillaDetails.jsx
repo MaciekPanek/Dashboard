@@ -21,7 +21,7 @@ function VillaDetails() {
     handleEditModalToggle,
   } = useVillaDetails();
 
-  if (isLoading) return <Loader />;
+  if (isLoading || !selectedVilla) return <Loader />;
 
   return (
     <section className="bg-stone-100 min-h-screen p-20 flex flex-col gap-20 ">

@@ -3,9 +3,18 @@ import { useVillaDetails } from "../../context/VillaDetailsContext";
 import { createPortal } from "react-dom";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { useDeleteVilla } from "../../hooks/useDeleteVilla";
+import { useNavigate } from "react-router-dom";
 
-function DeleteModal({ onClick }) {
+function DeleteModal({ villaId }) {
+  const navigate = useNavigate();
   const { isDeleteModalVisible, handleClose } = useVillaDetails();
+  const { isDeleting, deleteVilla } = useDeleteVilla();
+
+  function handleDelete(villaId) {
+    deleteVilla(villaId);
+    handleClose();
+    navigate(-1);
+  }
 
   const ref = useOutsideClick(handleClose);
 
@@ -34,7 +43,7 @@ function DeleteModal({ onClick }) {
             Close
           </button>
           <button
-            onClick={onClick}
+            onClick={() => handleDelete(villaId)}
             className="bg-red-500  py-2 px-5 rounded-full text-2xl text-red-200 hover:scale-105 duration-300"
           >
             Delete

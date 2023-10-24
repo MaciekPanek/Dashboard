@@ -63,7 +63,7 @@ export async function deleteVilla(id) {
 
   if (error) {
     console.error(error);
-    throw new Error("Villa could not be deleted");
+    throw new Error(`Villa could not be deleted due to: ${error.details} `);
   }
 
   return error;
