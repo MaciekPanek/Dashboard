@@ -15,13 +15,21 @@ function AddNewVilla() {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
-    createVilla({ ...data, image: image });
+    createVilla(
+      { ...data, image: image },
+      {
+        onSuccess: (data) => {
+          reset();
+        },
+      }
+    );
     navigate(-1);
   };
 
@@ -35,36 +43,52 @@ function AddNewVilla() {
           <h1 className="text-center italic text-[50px] text-neutral-500 py-8  border-b-solid border-neutral-200 border-b-2 ">
             Create new villa for your guests!
           </h1>
-          <FormRow>
+          <FormRow error={errors?.name?.message}>
             <input
-              {...register("name")}
+              {...register("name", {
+                required: "This field is required",
+              })}
+              id="name"
               placeholder="Name"
               type="text"
               className="inputStyle"
             />
-            <span></span>
           </FormRow>
-          <FormRow>
+          <FormRow error={errors?.capacity?.message}>
             <input
-              {...register("capacity")}
+              {...register("capacity", {
+                required: "This field is required",
+                min: {
+                  value: 1,
+                  message: "Capacity should be at least 1",
+                },
+              })}
               placeholder="Capacity"
+              id="capacity"
               type="text"
               className="inputStyle"
             />
-            <span></span>
           </FormRow>
-          <FormRow>
+          <FormRow error={errors?.price?.message}>
             <input
-              {...register("price")}
+              {...register("price", {
+                required: "This field is required",
+                min: {
+                  value: 1,
+                  message: "Price should be at least $1",
+                },
+              })}
+              id="price"
               placeholder="Price"
               type="number"
               className="inputStyle"
             />
-            <span></span>
           </FormRow>
           <FormRow>
             <input
-              {...register("image")}
+              {...register("image", {
+                required: "This field is required",
+              })}
               placeholder="image"
               id="image"
               accept="image/*"
@@ -74,14 +98,16 @@ function AddNewVilla() {
 
             <span></span>
           </FormRow>
-          <FormRow>
+          <FormRow error={errors?.description?.message}>
             <textarea
-              {...register("description")}
+              {...register("description", {
+                required: "This field is required",
+              })}
+              id="description"
               placeholder="Description"
               type="text"
               className="border-2 border-dashed border-neutral-400 w-1/2 px-3 text-neutral-500 outline-none  "
             />
-            <span></span>
           </FormRow>
           <FormRow className="border-none flex gap-5">
             <button

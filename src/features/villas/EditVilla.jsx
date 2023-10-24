@@ -7,29 +7,55 @@ import {
   HiOutlineDocumentCheck,
 } from "react-icons/hi2";
 import Loader from "../../ui/Loader";
+import { useVillaDetails } from "../../context/VillaDetailsContext";
+import { useEditVilla } from "../../hooks/useEditVilla";
 
-function EditVilla() {
+function EditVilla({ selectedVilla }) {
   const navigate = useNavigate();
   const { isCreating, createVilla } = useCreateVilla();
+  const { editVilla, isEditing } = useEditVilla();
+
+  const { id } = selectedVilla || { id: null };
+
+  const { isEditModalVisible, handleEditModalToggle } = useVillaDetails();
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm();
+    reset,
+  } = useForm({
+    defaultValues: selectedVilla, // Set default values to the selected villa data
+  });
 
   const onSubmit = (data) => {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
-    createVilla({ ...data, image: image });
-    navigate(-1);
+    if (isEditModalVisible)
+      editVilla(
+        { newVillaData: { ...data, image }, id },
+        {
+          onSuccess: (data) => {
+            reset();
+            handleEditModalToggle?.();
+          },
+        }
+      );
+    else
+      createVilla(
+        { ...data, image: image },
+        {
+          onSuccess: (data) => {
+            reset();
+          },
+        }
+      );
   };
 
   if (isCreating) return <Loader />;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col w-3/4 ">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-3/4">
       <FormRow>
         <input
           {...register("name")}
@@ -37,11 +63,13 @@ function EditVilla() {
           type="text"
           className="inputStyle"
         />
-        <span></span>
+        <span>{errors?.name?.message}</span>
       </FormRow>
       <FormRow>
         <input
-          {...register("capacity")}
+          {...register("capacity", {
+            required: "This field is required",
+          })}
           placeholder="Capacity"
           type="text"
           className="inputStyle"
@@ -64,9 +92,8 @@ function EditVilla() {
           id="image"
           accept="image/*"
           type="file"
-          className=" mb-3 px-1 file:rounded-full file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 file:px-6 file:py-2 file:mr-5 file:hover:cursor-pointer "
+          className="mb-3 px-1 file:rounded-full file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 file:px-6 file:py-2 file:mr-5 file:hover:cursor-pointer"
         />
-
         <span></span>
       </FormRow>
       <FormRow>
@@ -74,7 +101,7 @@ function EditVilla() {
           {...register("description")}
           placeholder="Description"
           type="text"
-          className="border-2 border-dashed border-neutral-400 w-1/2 px-3 text-neutral-500 outline-none  "
+          className="border-2 border-dashed border-neutral-400 w-1/2 px-3 text-neutral-500 outline-none"
         />
         <span></span>
       </FormRow>
@@ -82,18 +109,20 @@ function EditVilla() {
         <button
           onClick={(e) => {
             e.preventDefault();
+            handleEditModalToggle();
             navigate(-1);
           }}
-          className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
+          className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300"
         >
           Back
           <HiOutlineArrowUturnLeft />
         </button>
         <button
           type="submit"
-          className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
+          className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300"
         >
-          Create new villa <HiOutlineDocumentCheck />
+          {isEditModalVisible ? "Edit villa" : "Create new villa"}{" "}
+          <HiOutlineDocumentCheck />
         </button>
       </FormRow>
     </form>

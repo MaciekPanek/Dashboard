@@ -6,6 +6,7 @@ import VillaDescription from "./VillaDescription";
 import { HiOutlinePencilSquare, HiOutlineTrash } from "react-icons/hi2";
 import { useVillaDetails } from "../../context/VillaDetailsContext";
 import DeleteModal from "./DeleteModal";
+import { useState, useEffect } from "react";
 
 function VillaDetails() {
   const { villaId } = useParams();
@@ -21,6 +22,12 @@ function VillaDetails() {
     handleEditModalToggle,
   } = useVillaDetails();
 
+  const [editData, setEditData] = useState(null);
+
+  useEffect(() => {
+    setEditData(selectedVilla);
+  }, [selectedVilla]);
+
   if (isLoading || !selectedVilla) return <Loader />;
 
   return (
@@ -28,7 +35,10 @@ function VillaDetails() {
       <VillaDescription selectedVilla={selectedVilla} />
       <div className="flex gap-4 justify-end ">
         <button
-          onClick={() => handleEditModalToggle()}
+          onClick={() => {
+            handleEditModalToggle();
+            setEditData(selectedVilla);
+          }}
           className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
         >
           Edit villa <HiOutlinePencilSquare />
@@ -40,15 +50,13 @@ function VillaDetails() {
           Delete villa <HiOutlineTrash />
         </button>
         {isDeleteModalVisible && (
-          <DeleteModal
-            onClose={handleClose}
-            villaId={villaId}
-            // onClick={() => handleDelete(villaId)}
-          />
+          <DeleteModal onClose={handleClose} villaId={villaId} />
         )}
       </div>
       <div className="flex justify-center ">
-        {isEditModalVisible && <EditVilla selectedVilla={selectedVilla} />}
+        {isEditModalVisible && editData ? (
+          <EditVilla selectedVilla={editData} />
+        ) : null}
       </div>
     </section>
   );
