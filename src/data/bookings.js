@@ -34,9 +34,7 @@ export const bookings = [
     departureDate: fromToday(18),
     villaId: 1,
     guestId: 4,
-
     notes: "",
-
     guestsNum: 2,
   },
 
@@ -47,7 +45,6 @@ export const bookings = [
     departureDate: fromToday(-29),
     villaId: 2,
     guestId: 5,
-
     notes: "",
     guestsNum: 2,
   },
@@ -67,7 +64,6 @@ export const bookings = [
     villaId: 2,
     guestId: 7,
     notes: "",
-
     guestsNum: 2,
   },
 
@@ -87,7 +83,6 @@ export const bookings = [
     departureDate: fromToday(0),
     villaId: 3,
     guestId: 9,
-
     notes: "We will be bringing our small dog with us",
     guestsNum: 3,
   },
@@ -118,7 +113,6 @@ export const bookings = [
     villaId: 4,
     guestId: 12,
     notes: "",
-
     guestsNum: 4,
   },
   {
@@ -127,7 +121,6 @@ export const bookings = [
     departureDate: fromToday(19),
     villaId: 4,
     guestId: 13,
-
     notes: "",
     guestsNum: 1,
   },
@@ -140,7 +133,6 @@ export const bookings = [
     villaId: 5,
     guestId: 14,
     notes: "",
-
     guestsNum: 5,
   },
   {
@@ -158,7 +150,6 @@ export const bookings = [
     departureDate: fromToday(-1),
     villaId: 5,
     guestId: 16,
-
     notes: "",
     guestsNum: 6,
   },
@@ -170,7 +161,6 @@ export const bookings = [
     departureDate: fromToday(11),
     villaId: 6,
     guestId: 17,
-
     notes: "We will be checking in late, around midnight. Hope that's okay :)",
     guestsNum: 6,
   },
@@ -200,9 +190,7 @@ export const bookings = [
     departureDate: fromToday(23),
     villaId: 7,
     guestId: 20,
-
     notes: "",
-
     guestsNum: 8,
   },
   {
@@ -251,7 +239,6 @@ export const bookings = [
     departureDate: fromToday(13),
     villaId: 8,
     guestId: 24,
-
     notes: "",
     guestsNum: 7,
   },
