@@ -7,13 +7,14 @@ function Booking({ booking }) {
     notes,
     cost,
     Villas: { name },
-    Guests: { fullName, email },
+    Guests: { fullName, email, flag },
   } = booking;
 
   return (
     <div className="bg-stone-200">
       <div>
         <div>{fullName}</div>
+        <div>{flag}</div>
         <div>{arrivalDate}</div>
         <div>{departureDate}</div>
       </div>

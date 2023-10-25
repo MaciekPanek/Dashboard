@@ -56,11 +56,11 @@ async function createBookings() {
     // Here relying on the order of villas, as they don't have and ID yet
     const villa = villas.at(booking.villaId - 1);
     const numNights = subtractDates(booking.arrivalDate, booking.departureDate);
-    const villaPrice = numNights * villa.price;
+    const cost = numNights * villa.price;
 
     return {
       ...booking,
-      villaPrice,
+      cost,
       guestId: allGuestIds.at(booking.guestId - 1),
       villaId: allvillaIds.at(booking.villaId - 1),
     };
