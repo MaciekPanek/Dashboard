@@ -21,7 +21,7 @@ function Navbar() {
           />
           <p className="text-3xl text-neutral-700 ">Name</p>
         </div>
-        <ul className="flex flex-col items-start  border-b-2 border-b-neutral-300  w-full py-20 ">
+        <ul className="flex flex-col items-start px-4  border-b-2 border-b-neutral-300  w-full py-20 ">
           <NavItem to="/">
             <HiOutlineHome />
             <span>Home</span>

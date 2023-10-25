@@ -6,7 +6,7 @@ function NavItem({ to, children }) {
       <NavLink
         className="flex flex-row gap-3 py-2 pl-5 "
         to={to}
-        activeClassName="active"
+        activeclassname="active"
       >
         {children}
       </NavLink>
