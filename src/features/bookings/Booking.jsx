@@ -1,6 +1,4 @@
 function Booking({ booking }) {
-  console.log(booking);
-
   const {
     arrivalDate,
     departureDate,
