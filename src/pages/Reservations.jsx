@@ -27,7 +27,7 @@ function Reservations() {
 
   // Render the grouped bookings
   return (
-    <section className="grid grid-cols-fluid gap-10 bg-stone-100 min-h-screen auto-rows-max p-20">
+    <section className="flex flex-col gap-10 bg-stone-100 min-h-screen  p-20">
       {Object.keys(groupedBookings).map((villaName) => (
         <div key={villaName}>
           {/* Display a heading with the villa name for each group of bookings */}
