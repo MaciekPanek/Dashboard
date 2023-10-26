@@ -13,7 +13,7 @@ import {
 function Navbar() {
   return (
     <>
-      <nav className="bg-stone-100 h-screen w-1/5 flex items-start border-r-2 border-r-neutral-300   flex-col  fixed ">
+      <nav className="bg-stone-100 h-screen w-[15%] flex items-start border-r-2 border-r-neutral-300   flex-col  fixed ">
         <div className="flex items-center gap-5 border-b-2 border-b-neutral-300 py-5 w-full pl-12  ">
           <img
             src="/photo.jpeg"
