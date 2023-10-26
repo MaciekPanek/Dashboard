@@ -28,7 +28,6 @@ function Booking({ booking }) {
         From -- {formattedArrivalDate}
       </p>
       <p className="w-1/5 italic text-neutral-600  ">
-        {" "}
         To -- {formattedDepartureDate}
       </p>
     </div>
