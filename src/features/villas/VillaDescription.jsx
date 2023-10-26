@@ -3,7 +3,7 @@ function VillaDescription({ selectedVilla }) {
 
   return (
     <div className="flex gap-10 ">
-      <img src={image} className="max-h-[20vw] rounded-lg  " />
+      <img src={image} className="max-h-[20vw]  rounded-lg  " />
 
       <div className="w-1/2">
         <div className="text-neutral-600 text-3xl py-2 italic">

@@ -19,15 +19,18 @@ function Booking({ booking }) {
     .replace(/\//g, "-");
 
   return (
-    <div className="bg-stone-200">
-      <div className="flex gap-5 ">
-        <p className="w-[15%] bg-slate-300 ">
-          {fullName}
-          <span>{flag}</span>
-        </p>
-        <p className="w-1/5 bg-slate-300">{formattedArrivalDate}</p>
-        <div className="w-1/5 bg-slate-300"> {formattedDepartureDate}</div>
-      </div>
+    <div className="flex gap-5 justify-center ">
+      <p className="w-1/5 italic text-neutral-600  ">
+        {fullName}
+        <span>{flag}</span>
+      </p>
+      <p className="w-1/5 italic text-neutral-600  ">
+        From -- {formattedArrivalDate}
+      </p>
+      <p className="w-1/5 italic text-neutral-600  ">
+        {" "}
+        To -- {formattedDepartureDate}
+      </p>
     </div>
   );
 }

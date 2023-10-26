@@ -1,41 +1,61 @@
+import { HiArrowDown, HiArrowUp } from "react-icons/hi2";
 import Booking from "../features/bookings/Booking";
 import { useBookings } from "../hooks/useBookings";
 import Loader from "../ui/Loader";
+import { useState } from "react";
 
 function Reservations() {
-  // Fetch bookings data and handle loading and error states
   const { isLoading, error, bookings } = useBookings();
 
+  const [expandedVilla, setExpandedVilla] = useState(null);
+
   if (isLoading || bookings === undefined) {
-    // If data is still loading or unavailable, display a loading spinner
     return <Loader />;
   }
 
-  // Initialize an object to group bookings by villa name
   const groupedBookings = {};
 
-  // Iterate through each booking and group them by villa name
   bookings.forEach((booking) => {
     const villaName = booking.Villas.name;
     if (!groupedBookings[villaName]) {
-      // If the villa name is not already in groupedBookings, create an array for it
       groupedBookings[villaName] = [];
     }
-    // Add the booking to the corresponding villa's array
     groupedBookings[villaName].push(booking);
   });
 
-  // Render the grouped bookings
   return (
-    <section className="flex flex-col gap-10 bg-stone-100 min-h-screen  p-20">
+    <section className="flex gap-10 bg-stone-100 min-h-screen items-center  flex-col p-20">
       {Object.keys(groupedBookings).map((villaName) => (
-        <div key={villaName}>
-          {/* Display a heading with the villa name for each group of bookings */}
-          <h2>Villa: {villaName}</h2>
-          {groupedBookings[villaName].map((booking) => (
-            // Render individual bookings for the current villa
-            <Booking booking={booking} key={booking.id} />
-          ))}
+        <div
+          key={villaName}
+          className="bg-stone-200  h-min p-4 w-3/5 rounded-2xl"
+        >
+          <div className="flex flex-col items-center justify-center ">
+            <h2 className="text-neutral-600 text-3xl py-2 italic  cursor-pointer">
+              Villa: {villaName}
+            </h2>
+            <button
+              onClick={() =>
+                setExpandedVilla(expandedVilla === villaName ? null : villaName)
+              }
+              className="flex items-center gap-2 text-neutral-600 cursor-pointer hover:scale-105 duration-300 underline "
+            >
+              {expandedVilla !== villaName &&
+                "Unfold reservations for this villa"}
+              {expandedVilla !== villaName && <HiArrowDown />}
+              {expandedVilla === villaName &&
+                "Fold reservations for this villa"}
+              {expandedVilla === villaName && <HiArrowUp />}
+            </button>
+          </div>
+
+          {expandedVilla === villaName && (
+            <div>
+              {groupedBookings[villaName].map((booking) => (
+                <Booking booking={booking} key={booking.id} />
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </section>
