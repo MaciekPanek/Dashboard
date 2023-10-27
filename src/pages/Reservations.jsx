@@ -51,6 +51,13 @@ function Reservations() {
 
           {expandedVilla === villaName && (
             <div>
+              <div className="flex gap-5 justify-center  border border-b-neutral-400 my-3 ">
+                <p className="w-1/5 italic text-neutral-600  ">Guest:</p>
+                <p className="w-1/5 italic text-neutral-600  ">Arrival date:</p>
+                <p className="w-1/5 italic text-neutral-600  ">
+                  Departure date:
+                </p>
+              </div>
               {groupedBookings[villaName].map((booking) => (
                 <Booking booking={booking} key={booking.id} />
               ))}
