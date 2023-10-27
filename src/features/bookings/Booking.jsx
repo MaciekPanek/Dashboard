@@ -2,12 +2,7 @@ function Booking({ booking }) {
   const {
     arrivalDate,
     departureDate,
-    guestNum,
-    id,
-    notes,
-    cost,
-    Villas: { name },
-    Guests: { fullName, email, flag },
+    Guests: { fullName, flag },
   } = booking;
 
   const currentDate = new Date();

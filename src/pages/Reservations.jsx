@@ -5,7 +5,7 @@ import Loader from "../ui/Loader";
 import { useState } from "react";
 
 function Reservations() {
-  const { isLoading, error, bookings } = useBookings();
+  const { isLoading, bookings } = useBookings();
 
   const [expandedVilla, setExpandedVilla] = useState(null);
 
