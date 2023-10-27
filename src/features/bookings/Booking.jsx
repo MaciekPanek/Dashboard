@@ -10,6 +10,11 @@ function Booking({ booking }) {
     Guests: { fullName, email, flag },
   } = booking;
 
+  const currentDate = new Date();
+  const isCurrentDateInRange =
+    currentDate >= new Date(arrivalDate) &&
+    currentDate <= new Date(departureDate);
+
   const formattedArrivalDate = new Date(arrivalDate)
     .toLocaleDateString("en-GB")
     .replace(/\//g, "-");
@@ -19,7 +24,11 @@ function Booking({ booking }) {
     .replace(/\//g, "-");
 
   return (
-    <div className="flex gap-5 justify-center ">
+    <div
+      className={`flex gap-5 justify-center rounded-lg ${
+        isCurrentDateInRange && "bg-green-400"
+      } `}
+    >
       <p className="w-1/5 italic text-neutral-600  ">
         {fullName}
         <span>{flag}</span>
