@@ -24,7 +24,7 @@ function Reservations() {
   });
 
   return (
-    <section className="flex gap-10 bg-stone-100 min-h-screen items-center  flex-col p-20">
+    <section className="flex gap-5 bg-stone-100 min-h-screen items-center  flex-col p-20">
       {Object.keys(groupedBookings).map((villaName) => (
         <div
           key={villaName}
