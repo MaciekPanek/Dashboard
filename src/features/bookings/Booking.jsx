@@ -15,6 +15,9 @@ function Booking({ booking }) {
     currentDate >= new Date(arrivalDate) &&
     currentDate <= new Date(departureDate);
 
+  const invalidDate = new Date(departureDate) < currentDate;
+  const awaitingArrivalDate = new Date(arrivalDate) > currentDate;
+
   const formattedArrivalDate = new Date(arrivalDate)
     .toLocaleDateString("en-GB")
     .replace(/\//g, "-");
@@ -26,8 +29,8 @@ function Booking({ booking }) {
   return (
     <div
       className={`flex gap-5 justify-center rounded-lg ${
-        isCurrentDateInRange && "bg-green-400"
-      } `}
+        isCurrentDateInRange && "bg-green-300"
+      } ${invalidDate && "bg-red-300"} ${awaitingArrivalDate && "bg-sky-300"} `}
     >
       <p className="w-1/5 italic text-neutral-600  ">
         {fullName}
