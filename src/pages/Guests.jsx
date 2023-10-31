@@ -10,7 +10,7 @@ function Guests() {
         guests.map((guest) => <Guest key={guest.id} guest={guest} />)
       ) : // Render a loading indicator or an error message here
       isLoading ? (
-        <div>Loading...</div>
+        <div>Loading</div>
       ) : (
         <div>Error loading guests.</div>
       )}
