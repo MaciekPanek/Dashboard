@@ -39,14 +39,14 @@ export const guests = [
   {
     fullName: "Jonas Anderson",
     email: "anderson@example.com",
-    country: "Bolivia (Plurinational State of)",
+    country: "Bolivia",
     flag: "🇧🇴",
     phoneNumber: generateRandomPhoneNumber(),
   },
   {
     fullName: "Jonathan Williams",
     email: "jowi@gmail.com",
-    country: "United States of America",
+    country: "USA",
     flag: "🇺🇸",
     phoneNumber: generateRandomPhoneNumber(),
   },
@@ -109,7 +109,7 @@ export const guests = [
   {
     fullName: "John Doe",
     email: "johndoe@gmail.com",
-    country: "United States",
+    country: "USA",
     flag: "🇺🇸",
     phoneNumber: generateRandomPhoneNumber(),
   },

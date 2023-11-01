@@ -28,7 +28,7 @@ function Reservations() {
       {Object.keys(groupedBookings).map((villaName) => (
         <div
           key={villaName}
-          className="bg-stone-200  h-min p-4 w-3/5 rounded-2xl"
+          className="bg-stone-200 border border-neutral-400 h-min p-4 w-3/5 rounded-2xl"
         >
           <div className="flex flex-col items-center justify-center ">
             <h2 className="text-neutral-600 text-3xl py-2 italic  cursor-pointer">
@@ -51,12 +51,10 @@ function Reservations() {
 
           {expandedVilla === villaName && (
             <div>
-              <div className="flex gap-5 justify-center  border border-b-neutral-400 my-3 ">
-                <p className="w-1/5 italic text-neutral-600  ">Guest:</p>
-                <p className="w-1/5 italic text-neutral-600  ">Arrival date:</p>
-                <p className="w-1/5 italic text-neutral-600  ">
-                  Departure date:
-                </p>
+              <div className="flex gap-5 justify-center italic text-neutral-600 border border-b-neutral-400 my-3 ">
+                <p className="w-1/5">Guest:</p>
+                <p className="w-1/5">Arrival date:</p>
+                <p className="w-1/5">Departure date:</p>
               </div>
               {groupedBookings[villaName].map((booking) => (
                 <Booking booking={booking} key={booking.id} />
