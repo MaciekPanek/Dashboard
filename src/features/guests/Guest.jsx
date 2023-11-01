@@ -18,7 +18,6 @@ function Guest({ guest }) {
         </p>
         <p className="text-lg   "> Rented villa: {villaName}</p>
       </div>
-      {/* <p className="text-sm text-neutral-600  ">Nationality: {country}</p> */}
       <div className="flex gap-10 items-center ">
         <p>{email}</p>
         <p className="text-sm">{phoneNumber}</p>
