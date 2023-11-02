@@ -3,10 +3,9 @@ function Guest({ guest }) {
     arrivalDate,
     departureDate,
     guestsNum,
-    notes,
     cost,
     Villas: { name: villaName },
-    Guests: { fullName, email, flag, country, phoneNumber, id },
+    Guests: { fullName, email, flag, country, phoneNumber },
   } = guest;
 
   const currentDate = new Date();
@@ -41,11 +40,6 @@ function Guest({ guest }) {
           Paid ${cost * -1} for {guestsNum} {guestsNum > 1 ? "guests" : "guest"}
         </p>
       </div>
-
-      {/* <div className="mt-5">
-       <p className="text-sm">{notes ? "Notes:" : ""} </p>
-        <p>{notes}</p>
-      </div> */}
     </div>
   );
 }
