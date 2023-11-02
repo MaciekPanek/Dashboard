@@ -17,14 +17,6 @@ function Guest({ guest }) {
   const invalidDate = new Date(departureDate) < currentDate;
   const awaitingArrivalDate = new Date(arrivalDate) > currentDate;
 
-  // const formattedArrivalDate = new Date(arrivalDate)
-  //   .toLocaleDateString("en-GB")
-  //   .replace(/\//g, "-");
-
-  // const formattedDepartureDate = new Date(departureDate)
-  //   .toLocaleDateString("en-GB")
-  //   .replace(/\//g, "-");
-
   return (
     <div
       className={`flex gap-1 flex-col w-[500px] bg-neutral-200 p-3 border border-neutral-400  rounded-xl min-h-[200px] italic border-b-[6px] text-neutral-600 ${
