@@ -19,7 +19,7 @@ function Guest({ guest }) {
 
   return (
     <div
-      className={`flex gap-1 flex-col w-[500px] bg-neutral-200 p-3 border border-neutral-400  rounded-xl min-h-[200px] italic border-b-[6px] text-neutral-600 ${
+      className={`flex gap-1 flex-col w-[500px] bg-neutral-200 p-3 border border-neutral-400  rounded-xl min-h-[150px] italic border-b-[6px] text-neutral-600 ${
         isCurrentDateInRange && " border-b-green-500  "
       } ${invalidDate && "border-b-red-500"} ${
         awaitingArrivalDate && "border-b-sky-500"
@@ -42,10 +42,10 @@ function Guest({ guest }) {
         </p>
       </div>
 
-      <div className="mt-5">
-        <p className="text-sm">{notes ? "Notes:" : ""} </p>
+      {/* <div className="mt-5">
+       <p className="text-sm">{notes ? "Notes:" : ""} </p>
         <p>{notes}</p>
-      </div>
+      </div> */}
     </div>
   );
 }
