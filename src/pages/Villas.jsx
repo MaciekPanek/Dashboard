@@ -16,7 +16,6 @@ function Villas() {
       {villas.map((villa) => (
         <Villa villa={villa} key={villa.id} />
       ))}
-
       <NavLink
         to={"/villas/newvilla"}
         className="w-[400px] hover:scale-105 h-[300px] ease-in-out duration-300 hover:cursor-pointer "

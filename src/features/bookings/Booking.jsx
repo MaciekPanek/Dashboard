@@ -23,7 +23,7 @@ function Booking({ booking }) {
 
   return (
     <div
-      className={`flex gap-5 justify-center rounded-lg ${
+      className={`flex gap-5 justify-center rounded-lg text-center ${
         isCurrentDateInRange && "bg-green-300"
       } ${invalidDate && "bg-red-300"} ${awaitingArrivalDate && "bg-sky-300"} `}
     >

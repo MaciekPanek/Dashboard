@@ -5,7 +5,7 @@ import { VillaDetailsProvider } from "./context/VillaDetailsContext";
 import AppLayout from "./AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Error from "./ui/Error";
-import Reservations from "./pages/Reservations";
+import Bookings from "./pages/Bookings";
 import Guests from "./pages/Guests";
 import Villas from "./pages/Villas";
 import Settings from "./pages/Settings";
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/reservations",
-        element: <Reservations />,
+        element: <Bookings />,
       },
       {
         path: "/villas",

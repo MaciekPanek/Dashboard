@@ -28,7 +28,7 @@ function Reservations() {
       {Object.keys(groupedBookings).map((villaName) => (
         <div
           key={villaName}
-          className="bg-stone-200 border border-neutral-400 h-min p-4 w-3/5 rounded-2xl"
+          className="bg-neutral-200 border border-neutral-400 h-min p-4 w-4/5 rounded-2xl"
         >
           <div className="flex flex-col items-center justify-center ">
             <h2 className="text-neutral-600 text-3xl py-2 italic  cursor-pointer">
@@ -40,18 +40,16 @@ function Reservations() {
               }
               className="flex items-center gap-2 text-neutral-600 cursor-pointer hover:scale-105 duration-300 underline "
             >
-              {expandedVilla !== villaName &&
-                "Unfold reservations for this villa"}
+              {expandedVilla !== villaName && "Unfold bookings for this villa"}
               {expandedVilla !== villaName && <HiArrowDown />}
-              {expandedVilla === villaName &&
-                "Fold reservations for this villa"}
+              {expandedVilla === villaName && "Fold bookings for this villa"}
               {expandedVilla === villaName && <HiArrowUp />}
             </button>
           </div>
 
           {expandedVilla === villaName && (
             <div>
-              <div className="flex gap-5 justify-center italic text-neutral-600 border border-b-neutral-400 my-3 ">
+              <div className="flex gap-5 justify-center italic text-neutral-600 border border-b-neutral-400 my-3 text-center ">
                 <p className="w-1/5">Guest:</p>
                 <p className="w-1/5">Arrival date:</p>
                 <p className="w-1/5">Departure date:</p>
