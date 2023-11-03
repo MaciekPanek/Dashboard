@@ -3,6 +3,7 @@ import Booking from "../features/bookings/Booking";
 import { useBookings } from "../hooks/useBookings";
 import Loader from "../ui/Loader";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Reservations() {
   const { isLoading, bookings } = useBookings();
@@ -59,9 +60,12 @@ function Reservations() {
               ))}
 
               <div className="flex justify-end pt-5">
-                <button className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300  ">
+                <NavLink
+                  to={"newbooking"}
+                  className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300  "
+                >
                   Book new guest
-                </button>
+                </NavLink>
               </div>
             </div>
           )}

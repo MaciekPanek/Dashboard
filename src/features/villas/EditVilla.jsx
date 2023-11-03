@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useCreateVilla } from "../../hooks/useCreateVilla";
 import { useForm } from "react-hook-form";
-import FormRow from "./FormRow";
+import FormRow from "../../ui/FormRow";
 import {
   HiOutlineArrowUturnLeft,
   HiOutlineDocumentCheck,

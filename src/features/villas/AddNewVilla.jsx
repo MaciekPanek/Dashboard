@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import FormRow from "./FormRow";
+import FormRow from "../../ui/FormRow";
 import {
   HiOutlineDocumentCheck,
   HiOutlineArrowUturnLeft,

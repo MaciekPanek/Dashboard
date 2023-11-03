@@ -26,7 +26,7 @@ function Navbar() {
             <HiOutlineHome />
             <span>Home</span>
           </NavItem>
-          <NavItem to="/reservations">
+          <NavItem to="/bookings">
             <HiOutlineCalendarDays />
             <span>Bookings</span>
           </NavItem>
