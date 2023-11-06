@@ -64,7 +64,7 @@ function Reservations() {
                   to={"newbooking"}
                   className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300  "
                 >
-                  Book new guest
+                  Book new guest for this villa
                 </NavLink>
               </div>
             </div>
