@@ -5,6 +5,7 @@ const VillaDetailsContext = createContext(null);
 function VillaDetailsProvider({ children }) {
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
+  const [guestId, setGuestId] = useState(null);
 
   function handleOpen() {
     setIsDeleteModalVisible(true);
@@ -23,6 +24,8 @@ function VillaDetailsProvider({ children }) {
       value={{
         isEditModalVisible,
         isDeleteModalVisible,
+        guestId,
+        setGuestId,
         handleClose,
         handleOpen,
         handleEditModalToggle,

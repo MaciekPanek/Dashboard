@@ -11,6 +11,7 @@ import Villas from "./pages/Villas";
 import Settings from "./pages/Settings";
 import AddNewVilla from "./features/villas/AddNewVilla";
 import VillaDetails from "./features/villas/VillaDetails";
+import RegisterGuest from "./features/bookings/RegisterGuest";
 import NewBooking from "./features/bookings/NewBooking";
 
 const router = createBrowserRouter([
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
         element: <Settings />,
       },
       {
-        path: "/bookings/newbooking",
+        path: "/bookings/newbooking/:villaName",
+        element: <RegisterGuest />,
+      },
+      {
+        path: "/bookings/newbooking/:villaName/:guestId",
         element: <NewBooking />,
       },
     ],

@@ -11,7 +11,5 @@ export async function createGuest(newGuest) {
     throw new Error("Guest could not be registered");
   }
 
-  console.log(data);
-
   return data;
 }
