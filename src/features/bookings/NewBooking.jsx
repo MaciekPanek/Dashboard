@@ -5,20 +5,23 @@ import {
   HiOutlineDocumentCheck,
 } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+import { useCreateGuest } from "../../hooks/useCreateGuest";
 
 function NewBooking() {
   const navigate = useNavigate();
+  const { isCreating, createGuest } = useCreateGuest();
 
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    createGuest(data);
+    reset();
+    // navigate("")
   };
 
   return (
@@ -31,12 +34,12 @@ function NewBooking() {
           <h1 className="text-center italic text-[50px] text-neutral-500 py-8  border-b-solid border-neutral-200 border-b-2 ">
             Register your new guest here!
           </h1>
-          <FormRow error={errors?.fullname?.message}>
+          <FormRow error={errors?.fullName?.message}>
             <input
-              {...register("fullname", {
+              {...register("fullName", {
                 required: "This field is required!",
               })}
-              id="fullname"
+              id="fullName"
               placeholder="Fullname"
               type="text"
               className="inputStyle"
@@ -66,8 +69,8 @@ function NewBooking() {
                   message: "Phone number should be at least 9 digits long!",
                 },
               })}
-              id="phone-number"
               placeholder="Phone number"
+              id="phone-number"
               type="text"
               className="inputStyle"
             />
@@ -109,7 +112,7 @@ function NewBooking() {
               type="submit"
               className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
             >
-              Create new villa <HiOutlineDocumentCheck />
+              Register new guest <HiOutlineDocumentCheck />
             </button>
           </FormRow>
         </form>
