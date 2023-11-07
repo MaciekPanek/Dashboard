@@ -9,7 +9,7 @@ import { useGuests } from "../../hooks/useGuests";
 
 function RegisterGuest() {
   const navigate = useNavigate();
-  const { isCreating, createGuest } = useCreateGuest();
+  const { createGuest } = useCreateGuest();
   const { guestId, setGuestId } = useVillaDetails();
   const [gotToBooking, setGoToBooking] = useState(null);
 
