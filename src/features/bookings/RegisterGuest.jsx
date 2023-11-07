@@ -30,8 +30,12 @@ function RegisterGuest() {
 
   function handleGoToBooking(e) {
     e.preventDefault();
-    navigate(`/bookings/newbooking/${villaName}/${guestId}`);
-    setGuestId(null);
+    if (guestId) {
+      navigate(`/bookings/newbooking/${villaName}/${guestId}`);
+      setGuestId(null);
+    } else {
+      navigate("/bookings");
+    }
     setGoToBooking(false);
   }
 

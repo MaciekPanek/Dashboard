@@ -7,6 +7,7 @@ import { HiOutlinePencilSquare, HiOutlineTrash } from "react-icons/hi2";
 import { useVillaDetails } from "../../context/VillaDetailsContext";
 import DeleteModal from "./DeleteModal";
 import { useState, useEffect } from "react";
+import NotFound from "../../ui/NotFound";
 
 function VillaDetails() {
   const { villaId } = useParams();
@@ -28,7 +29,8 @@ function VillaDetails() {
     setEditData(selectedVilla);
   }, [selectedVilla]);
 
-  if (isLoading || !selectedVilla) return <Loader />;
+  if (isLoading) return <Loader />;
+  if (!selectedVilla) return <NotFound />;
 
   return (
     <section className="bg-stone-100 min-h-screen p-20 flex flex-col gap-20 ">
