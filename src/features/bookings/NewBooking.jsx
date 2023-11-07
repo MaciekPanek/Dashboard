@@ -42,74 +42,62 @@ function NewBooking() {
           className=" flex flex-col w-3/4 "
         >
           <h1 className="text-center italic text-[50px] text-neutral-500 py-8  border-b-solid border-neutral-200 border-b-2 ">
-            First register your new guest here!
+            Secondly, book your guest here!
           </h1>
-          <FormRow error={errors?.fullName?.message}>
+          <FormRow error={errors?.arrivalDate?.message}>
             <input
-              {...register("fullName", {
+              {...register("arrivalDate", {
                 required: "This field is required!",
               })}
-              id="fullName"
-              autoComplete="name"
-              placeholder="Fullname"
-              type="text"
-              className="inputStyle"
-            />
-          </FormRow>
-          <FormRow error={errors?.email?.message}>
-            <input
-              {...register("email", {
-                required: "This field is required!",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address!",
-                },
-              })}
-              placeholder="Email"
-              autoComplete="email"
-              id="email"
-              type="text"
-              className="inputStyle"
-            />
-          </FormRow>
-          <FormRow error={errors?.phoneNumber?.message}>
-            <input
-              {...register("phoneNumber", {
-                required: "This field is required!",
-                minLength: {
-                  value: 9,
-                  message: "Phone number should be at least 9 digits long!",
-                },
-              })}
-              autoComplete="tel-national"
-              placeholder="Phone number"
-              id="phone-number"
-              type="text"
-              className="inputStyle"
-            />
-          </FormRow>
-          <FormRow error={errors?.country?.message}>
-            <input
-              {...register("country", {
-                required: "This field is required!",
-              })}
-              placeholder="Country"
-              autoComplete="country-name"
-              id="country"
-              type="text"
-              className=" inputStyle "
-            />
-          </FormRow>
-          <FormRow error={errors?.flag?.message}>
-            <input
-              {...register("flag", {
-                required: "This field is required!",
-              })}
-              id="flag"
+              id="arrivalDate"
               autoComplete="no-autofill"
-              placeholder="Add country emote"
-              type="text"
+              placeholder="Date of arrival"
+              type="date"
+              className="inputStyle"
+            />
+          </FormRow>
+          <FormRow error={errors?.departureDate?.message}>
+            <input
+              {...register("departureDate", {
+                required: "This field is required!",
+              })}
+              placeholder="Date of departure"
+              autoComplete="no-autofill"
+              id="departureDate"
+              type="date"
+              className="inputStyle"
+            />
+          </FormRow>
+          <FormRow error={errors?.guestNum?.message}>
+            <input
+              {...register("guestNum", {
+                required: "This field is required!",
+              })}
+              id="guestNum"
+              autoComplete="no-autofill"
+              placeholder="Number of guests"
+              type="number"
               className="inputStyle "
+            />
+          </FormRow>
+          <FormRow error={errors?.notes?.message}>
+            <textarea
+              {...register("notes")}
+              autoComplete="no-autofill"
+              placeholder="Special requests"
+              id="notes"
+              type="text"
+              className="border-2 border-dashed border-neutral-400 w-1/2 px-3 text-neutral-500 outline-none"
+            />
+          </FormRow>
+          <FormRow error={errors?.cost?.message}>
+            <input
+              {...register("cost")}
+              placeholder="Cost"
+              autoComplete="no-autofill"
+              id="cost"
+              type="number"
+              className=" inputStyle "
             />
           </FormRow>
           <FormRow className="border-none flex gap-5">
