@@ -18,8 +18,6 @@ function NewBooking() {
     Array.isArray(guests) &&
     guests.some((guest) => guest.id.toString() === guestId);
 
-  // Display the error component if either the villaName or guestId is not valid
-
   const {
     register,
     handleSubmit,
