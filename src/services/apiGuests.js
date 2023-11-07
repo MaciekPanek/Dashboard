@@ -13,3 +13,14 @@ export async function createGuest(newGuest) {
 
   return data[0].id; // Return the ID of the newly created guest
 }
+
+export async function getGuests() {
+  const { data, error } = await supabase.from("Guests").select("*");
+
+  if (error) {
+    console.error(error);
+    throw new Error("Guests could not be laoded");
+  }
+
+  return data;
+}
