@@ -3,10 +3,14 @@ import FormRow from "../../ui/FormRow";
 import { HiOutlineArrowRight, HiOutlineArrowUturnLeft } from "react-icons/hi2";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCreateGuest } from "../../hooks/useCreateGuest";
+import { useVillaDetails } from "../../context/VillaDetailsContext";
+import { useState } from "react";
 
 function RegisterGuest() {
   const navigate = useNavigate();
   const { isCreating, createGuest } = useCreateGuest();
+  const { guestId, setGuestId } = useVillaDetails();
+  const [gotToBooking, setGoToBooking] = useState(null);
 
   const {
     register,
@@ -15,13 +19,21 @@ function RegisterGuest() {
     formState: { errors },
   } = useForm();
 
-  // const { villaName } = useParams("villaName");
+  const { villaName } = useParams("villaName");
 
   const onSubmit = (data) => {
     createGuest(data);
+    setGoToBooking(true);
+
     // reset();
-    // navigate(`/bookings/newbooking/${villaName}/${guestId}`);
   };
+
+  function handleGoToBooking(e) {
+    e.preventDefault();
+    navigate(`/bookings/newbooking/${villaName}/${guestId}`);
+    setGuestId(null);
+    setGoToBooking(false);
+  }
 
   return (
     <section className="bg-stone-100 min-h-screen ">
@@ -112,13 +124,22 @@ function RegisterGuest() {
               Back
               <HiOutlineArrowUturnLeft />
             </button>
-            <button
-              type="submit"
-              className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
-            >
-              Register and go to booking
-              <HiOutlineArrowRight />
-            </button>
+            {gotToBooking ? (
+              <button
+                onClick={handleGoToBooking}
+                className="rounded-full px-6 py-2 bg-neutral-500 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
+              >
+                Book this guest
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400  text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300 "
+              >
+                Register new guest
+                <HiOutlineArrowRight />
+              </button>
+            )}
           </FormRow>
         </form>
       </div>
