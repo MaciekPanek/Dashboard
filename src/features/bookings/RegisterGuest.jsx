@@ -25,7 +25,7 @@ function RegisterGuest() {
     createGuest(data);
     setGoToBooking(true);
 
-    // reset();
+    reset();
   };
 
   function handleGoToBooking(e) {
