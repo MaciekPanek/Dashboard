@@ -125,16 +125,6 @@ function NewBooking() {
               className="border-2 border-dashed border-neutral-400 w-1/2 px-3 text-neutral-500 outline-none"
             />
           </FormRow>
-          {/* <FormRow error={errors?.cost?.message}>
-            <input
-              {...register("cost")}
-              placeholder="Cost"
-              autoComplete="no-autofill"
-              id="cost"
-              type="number"
-              className=" inputStyle "
-            />
-          </FormRow> */}
           <FormRow className="border-none flex gap-5">
             <button
               onClick={(e) => {

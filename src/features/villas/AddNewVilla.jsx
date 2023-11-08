@@ -94,8 +94,6 @@ function AddNewVilla() {
               type="file"
               className=" mb-3 px-1 file:rounded-full file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 file:px-6 file:py-2 file:mr-5 file:hover:cursor-pointer "
             />
-
-            <span></span>
           </FormRow>
           <FormRow error={errors?.description?.message}>
             <textarea
