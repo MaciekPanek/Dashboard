@@ -25,7 +25,6 @@ function Villa({ villa }) {
           Price: ${price} per night
         </p>
         <NavLink
-          // onClick={handleShowDetails}
           to={`/villas/${id}`}
           className=" text-neutral-500 text-lg font-light italic flex flex-row items-center gap-2 hover:scale-105 ease-in-out duration-300 "
         >

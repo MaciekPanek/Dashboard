@@ -19,7 +19,7 @@ function DeleteModal({ villaId }) {
   const ref = useOutsideClick(handleClose);
 
   if (!isDeleteModalVisible) {
-    return null; // Don't render the modal if it's not visible
+    return null;
   }
 
   return createPortal(

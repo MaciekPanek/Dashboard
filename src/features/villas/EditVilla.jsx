@@ -25,7 +25,7 @@ function EditVilla({ selectedVilla }) {
     formState: { errors },
     reset,
   } = useForm({
-    defaultValues: selectedVilla, // Set default values to the selected villa data
+    defaultValues: selectedVilla,
   });
 
   const onSubmit = (data) => {

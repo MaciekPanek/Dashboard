@@ -25,6 +25,5 @@ export async function createBooking(newBooking) {
     console.error(error);
     throw new Error(`Booking could not be created.`);
   }
-
   return data;
 }
