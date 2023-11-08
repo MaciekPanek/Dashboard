@@ -5,18 +5,40 @@ import NotFound from "../../ui/NotFound";
 import { useForm } from "react-hook-form";
 import FormRow from "../../ui/FormRow";
 import { HiOutlineArrowRight, HiOutlineArrowUturnLeft } from "react-icons/hi2";
+import { useCreateBooking } from "../../hooks/useCreateBooking";
 
 function NewBooking() {
   const { villaName, guestId } = useParams();
   const navigate = useNavigate();
   const { guests } = useGuests();
   const { villas } = useVillas();
+  const { isCreating, createBooking } = useCreateBooking();
 
   const isVillasValid =
     Array.isArray(villas) && villas.some((villa) => villa.name === villaName);
   const isGuestsValid =
     Array.isArray(guests) &&
     guests.some((guest) => guest.id.toString() === guestId);
+
+  let villaId = null;
+  let villaPrice = null;
+  let villaCapacity = null;
+
+  if (isVillasValid) {
+    const matchingVilla = villas.find((villa) => villa.name === villaName);
+    if (matchingVilla) {
+      villaId = matchingVilla.id;
+      villaPrice = matchingVilla.price;
+      villaCapacity = matchingVilla.capacity;
+    }
+  }
+
+  const validateGuestsNum = (value, villaCapacity) => {
+    if (value > villaCapacity) {
+      return `Number of guests cannot exceed ${villaCapacity}.`;
+    }
+    return true; // Return true if the validation passes
+  };
 
   const {
     register,
@@ -26,7 +48,21 @@ function NewBooking() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const arrivalDate = new Date(data.arrivalDate);
+    const departureDate = new Date(data.departureDate);
+    const guestNum = data.guestsNum;
+    const timeDifference = departureDate - arrivalDate;
+
+    const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    const bookingCost = days * guestNum * villaPrice;
+
+    createBooking({
+      ...data,
+      cost: bookingCost,
+      villaId: villaId,
+      guestId: +guestId,
+    });
+    navigate("/bookings");
   };
 
   if (!isVillasValid || !isGuestsValid) {
@@ -66,16 +102,17 @@ function NewBooking() {
               className="inputStyle"
             />
           </FormRow>
-          <FormRow error={errors?.guestNum?.message}>
+          <FormRow error={errors?.guestsNum?.message}>
             <input
-              {...register("guestNum", {
+              {...register("guestsNum", {
                 required: "This field is required!",
+                validate: (value) => validateGuestsNum(value, villaCapacity),
               })}
-              id="guestNum"
+              id="guestsNum"
               autoComplete="no-autofill"
               placeholder="Number of guests"
               type="number"
-              className="inputStyle "
+              className="inputStyle"
             />
           </FormRow>
           <FormRow error={errors?.notes?.message}>
@@ -88,7 +125,7 @@ function NewBooking() {
               className="border-2 border-dashed border-neutral-400 w-1/2 px-3 text-neutral-500 outline-none"
             />
           </FormRow>
-          <FormRow error={errors?.cost?.message}>
+          {/* <FormRow error={errors?.cost?.message}>
             <input
               {...register("cost")}
               placeholder="Cost"
@@ -97,7 +134,7 @@ function NewBooking() {
               type="number"
               className=" inputStyle "
             />
-          </FormRow>
+          </FormRow> */}
           <FormRow className="border-none flex gap-5">
             <button
               onClick={(e) => {

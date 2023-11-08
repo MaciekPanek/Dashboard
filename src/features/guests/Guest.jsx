@@ -37,7 +37,7 @@ function Guest({ guest }) {
       </div>
       <div className="flex gap-10">
         <p>
-          Paid ${cost * -1} for {guestsNum} {guestsNum > 1 ? "guests" : "guest"}
+          Paid ${cost} for {guestsNum} {guestsNum > 1 ? "guests" : "guest"}
         </p>
       </div>
     </div>
