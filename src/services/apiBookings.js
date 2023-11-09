@@ -15,6 +15,19 @@ export async function getBookings() {
   return data;
 }
 
+export async function getSales() {
+  const { data, error } = await supabase
+    .from("Bookings")
+    .select("cost, created_at");
+
+  if (error) {
+    console.error(error);
+    throw new Error(`Bookings sales could not be loaded`);
+  }
+
+  return data;
+}
+
 export async function createBooking(newBooking) {
   const { data, error } = await supabase
     .from("Bookings")

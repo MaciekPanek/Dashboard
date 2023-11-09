@@ -11,10 +11,12 @@ function Villas() {
     return <Loader />;
   }
 
+  // console.log("Villas array:", villas);
+
   return (
     <section className="grid grid-cols-fluid gap-10  bg-stone-100 min-h-screen auto-rows-max p-10">
       {villas.map((villa) => (
-        <Villa villa={villa} key={villa.id} />
+        <Villa key={villa.id} villa={villa} />
       ))}
       <NavLink
         to={"/villas/newvilla"}
