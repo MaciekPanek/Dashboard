@@ -5,7 +5,7 @@ import Loader from "../ui/Loader";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Reservations() {
+function Bookings() {
   const { isLoading, bookings } = useBookings();
   const [expandedVilla, setExpandedVilla] = useState(null);
 
@@ -21,6 +21,12 @@ function Reservations() {
       groupedBookings[villaName] = [];
     }
     groupedBookings[villaName].push(booking);
+  });
+
+  Object.keys(groupedBookings).forEach((villaName) => {
+    groupedBookings[villaName].sort((a, b) => {
+      return new Date(b.arrivalDate) - new Date(a.arrivalDate);
+    });
   });
 
   return (
@@ -74,4 +80,4 @@ function Reservations() {
   );
 }
 
-export default Reservations;
+export default Bookings;
