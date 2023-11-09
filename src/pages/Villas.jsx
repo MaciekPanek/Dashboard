@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Villa from "../features/villas/Villa";
 import { useVillas } from "../hooks/useVillas";
 import Loader from "../ui/Loader";
+import NotFound from "../ui/NotFound";
 
 function Villas() {
   const { isLoading, villas } = useVillas();
@@ -11,12 +12,14 @@ function Villas() {
     return <Loader />;
   }
 
-  // console.log("Villas array:", villas);
+  if (!villas) return <NotFound />;
 
+  // console.log("Villas array:", villas);
+  //
   return (
     <section className="grid grid-cols-fluid gap-10  bg-stone-100 min-h-screen auto-rows-max p-10">
       {villas.map((villa) => (
-        <Villa key={villa.id} villa={villa} />
+        <Villa villa={villa} key={villa.id} />
       ))}
       <NavLink
         to={"/villas/newvilla"}
