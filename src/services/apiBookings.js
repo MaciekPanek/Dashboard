@@ -39,6 +39,20 @@ export async function getStays() {
 
   return data;
 }
+export async function getArrivalsAndDepartures() {
+  const { data, error } = await supabase
+    .from("Bookings")
+    .select(
+      "arrivalDate, departureDate, guestsNum, Villas(name), Guests(fullName, flag)"
+    );
+
+  if (error) {
+    console.error(error);
+    throw new Error(`Booking stays could not be loaded`);
+  }
+
+  return data;
+}
 
 export async function createBooking(newBooking) {
   const { data, error } = await supabase

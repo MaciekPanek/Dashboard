@@ -15,7 +15,7 @@ function Dashboard() {
          border-neutral-400 bg-neutral-200 h-1/2 "
             >
               <h2 className=" px-4 py-2 italic text-neutral-600 ">
-                Arrivals for the present day
+                Arrivals today
               </h2>
               <Arrivals />
             </div>
@@ -24,7 +24,7 @@ function Dashboard() {
          border-neutral-400 bg-neutral-200 h-1/2 "
             >
               <h2 className=" px-4 py-2 italic text-neutral-600 ">
-                Departures for the present day
+                Departures today
               </h2>
               <Departures />
             </div>

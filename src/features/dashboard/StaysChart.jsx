@@ -43,12 +43,17 @@ function StaysChart() {
 
   // Convert staysCountByDuration object to the required data format for the chart
   const data = Object.entries(staysCountByDuration)
-    .sort((a, b) => a[0].localeCompare(b[0])) // Sort legend by duration
+    .sort((a, b) => {
+      if (a[0] === "15 and more nights") return 1; // "15 and more nights" comes last
+      if (b[0] === "15 and more nights") return -1;
+      return a[0].localeCompare(b[0]);
+    })
     .map(([duration, count]) => [duration, count]);
 
   const options = {
     backgroundColor: "#e5e5e5",
-    is3D: true,
+    legend: "none",
+    colors: ["#a855f7"],
     animation: {
       startup: true,
       duration: 1000, // Animation duration in milliseconds
@@ -58,7 +63,7 @@ function StaysChart() {
 
   return (
     <Chart
-      chartType="PieChart"
+      chartType="BarChart"
       graph_id="chart2"
       id="chart2"
       data={[["Duration", "Number of Bookings"], ...data]}
