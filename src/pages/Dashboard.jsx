@@ -5,7 +5,7 @@ import StaysChart from "../features/dashboard/StaysChart";
 
 function Dashboard() {
   return (
-    <section className=" bg-stone-100 min-h-screen p-20 ">
+    <section className=" bg-stone-100 min-h-screen p-10 ">
       <h1 className="text-[50px] text-neutral-500 ">Dashboard</h1>
       <div className="flex flex-col gap-5 ">
         <div className="flex gap-5 ">
