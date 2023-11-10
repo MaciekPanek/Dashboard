@@ -22,7 +22,19 @@ export async function getSales() {
 
   if (error) {
     console.error(error);
-    throw new Error(`Bookings sales could not be loaded`);
+    throw new Error(`Booking sales could not be loaded`);
+  }
+
+  return data;
+}
+export async function getStays() {
+  const { data, error } = await supabase
+    .from("Bookings")
+    .select("arrivalDate, departureDate, created_at");
+
+  if (error) {
+    console.error(error);
+    throw new Error(`Booking stays could not be loaded`);
   }
 
   return data;

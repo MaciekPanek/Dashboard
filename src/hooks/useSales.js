@@ -6,7 +6,7 @@ export function useSales() {
     isLoading,
     data: sales,
     error,
-  } = useQuery({ queryKey: ["Villas"], queryFn: getSales });
+  } = useQuery({ queryKey: ["Bookings"], queryFn: getSales });
 
   return { isLoading, error, sales };
 }
