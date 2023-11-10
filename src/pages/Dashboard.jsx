@@ -8,6 +8,11 @@ function Dashboard() {
     <section className=" bg-stone-100 min-h-screen p-10 ">
       <h1 className="text-[50px] text-neutral-500 ">Dashboard</h1>
       <div className="flex flex-col gap-5 ">
+        <div className="flex">
+          <div className="w-1/3">Sales</div>
+          <div className="w-1/3">Bookings</div>
+          <div className="w-1/3">occupacy rate</div>
+        </div>
         <div className="flex gap-5 ">
           <div className="w-1/2 flex flex-col gap-5 ">
             <div
