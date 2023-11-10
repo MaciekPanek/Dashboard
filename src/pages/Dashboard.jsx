@@ -6,12 +6,39 @@ import StaysChart from "../features/dashboard/StaysChart";
 function Dashboard() {
   return (
     <section className=" bg-stone-100 min-h-screen p-10 ">
-      <h1 className="text-[50px] text-neutral-500 ">Dashboard</h1>
+      <h1 className="text-[50px] text-neutral-500 pb-5 ">
+        Dashboard for last 30 days
+      </h1>
       <div className="flex flex-col gap-5 ">
-        <div className="flex">
-          <div className="w-1/3">Sales</div>
-          <div className="w-1/3">Bookings</div>
-          <div className="w-1/3">occupacy rate</div>
+        <div className="flex gap-5 h-[100px] ">
+          <div
+            className="w-1/4 rounded-xl  border
+         border-neutral-400 bg-neutral-200"
+          >
+            <h2 className=" px-4 py-2 italic text-neutral-600 ">Sales</h2>
+          </div>
+          <div
+            className="w-1/4 rounded-xl  border
+         border-neutral-400 bg-neutral-200"
+          >
+            <h2 className=" px-4 py-2 italic text-neutral-600 ">Bookings</h2>
+          </div>
+          <div
+            className="w-1/4 rounded-xl  border
+         border-neutral-400 bg-neutral-200"
+          >
+            <h2 className=" px-4 py-2 italic text-neutral-600 ">
+              Currently booked
+            </h2>
+          </div>
+          <div
+            className="w-1/4 rounded-xl  border
+         border-neutral-400 bg-neutral-200"
+          >
+            <h2 className=" px-4 py-2 italic text-neutral-600 ">
+              Occupacy rate
+            </h2>
+          </div>
         </div>
         <div className="flex gap-5 ">
           <div className="w-1/2 flex flex-col gap-5 ">
