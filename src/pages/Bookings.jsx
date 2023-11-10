@@ -13,6 +13,10 @@ function Bookings() {
     return <Loader />;
   }
 
+  // console.log(bookings);
+
+  if (!bookings) return <Loader />;
+
   const groupedBookings = {};
 
   bookings.forEach((booking) => {

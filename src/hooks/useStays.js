@@ -6,7 +6,7 @@ export function useStays() {
     isLoading,
     data: stays,
     error,
-  } = useQuery({ queryKey: ["Bookings"], queryFn: getStays });
+  } = useQuery({ queryKey: ["Stays"], queryFn: getStays });
 
   return { isLoading, error, stays };
 }

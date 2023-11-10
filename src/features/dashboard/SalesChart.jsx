@@ -50,6 +50,8 @@ function SalesChart() {
   return (
     <Chart
       chartType="LineChart"
+      graph_id="chart1"
+      id="chart1"
       width="100%"
       height="400px"
       data={[["Day", "Sales"], ...chartData]}
