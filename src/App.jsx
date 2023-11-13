@@ -13,6 +13,7 @@ import AddNewVilla from './features/villas/AddNewVilla';
 import VillaDetails from './features/villas/VillaDetails';
 import RegisterGuest from './features/bookings/RegisterGuest';
 import NewBooking from './features/bookings/NewBooking';
+import { DarkModeProvider } from './context/DarkModeContext';
 
 const router = createBrowserRouter([
   {
@@ -65,29 +66,31 @@ const queryClient = new QueryClient();
 export default function App() {
   return (
     <VillaDetailsProvider>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-        <Toaster
-          position='bottom-left'
-          gutter={12}
-          containerStyle={{ margin: '8px' }}
-          toastOptions={{
-            success: {
-              duration: 3000,
-            },
-            error: {
-              duration: 5000,
-            },
-            style: {
-              fontSize: '20px',
-              maxWidth: '500px',
-              padding: '16px 24px',
-              backgroundColor: '#e7e5e4',
-              color: '#525252',
-            },
-          }}
-        />
-      </QueryClientProvider>
+      <DarkModeProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+          <Toaster
+            position='bottom-left'
+            gutter={12}
+            containerStyle={{ margin: '8px' }}
+            toastOptions={{
+              success: {
+                duration: 3000,
+              },
+              error: {
+                duration: 5000,
+              },
+              style: {
+                fontSize: '20px',
+                maxWidth: '500px',
+                padding: '16px 24px',
+                backgroundColor: '#e7e5e4',
+                color: '#525252',
+              },
+            }}
+          />
+        </QueryClientProvider>
+      </DarkModeProvider>
     </VillaDetailsProvider>
   );
 }
