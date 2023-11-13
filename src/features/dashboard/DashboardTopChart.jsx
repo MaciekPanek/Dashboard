@@ -2,7 +2,6 @@
 // import Loader from '../../ui/Loader';
 import { BookingsSummary } from './BookingsSummary';
 import { CurrentlyBookedSummary } from './CurrentlyBookedSummary';
-import { OccupacyRateSummary } from './OccupacyRateSummary';
 import { SalesSummary } from './SalesSummary';
 
 function DashboardTopChart() {
@@ -11,7 +10,6 @@ function DashboardTopChart() {
       <SalesSummary />
       <BookingsSummary />
       <CurrentlyBookedSummary />
-      <OccupacyRateSummary />
     </div>
   );
 }
