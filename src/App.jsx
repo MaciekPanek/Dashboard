@@ -1,18 +1,18 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "react-hot-toast";
-import { VillaDetailsProvider } from "./context/VillaDetailsContext";
-import AppLayout from "./AppLayout";
-import Dashboard from "./pages/Dashboard";
-import Error from "./ui/Error";
-import Bookings from "./pages/Bookings";
-import Guests from "./pages/Guests";
-import Villas from "./pages/Villas";
-import Settings from "./pages/Settings";
-import AddNewVilla from "./features/villas/AddNewVilla";
-import VillaDetails from "./features/villas/VillaDetails";
-import RegisterGuest from "./features/bookings/RegisterGuest";
-import NewBooking from "./features/bookings/NewBooking";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Toaster } from 'react-hot-toast';
+import { VillaDetailsProvider } from './context/VillaDetailsContext';
+import AppLayout from './AppLayout';
+import Dashboard from './pages/Dashboard';
+import Error from './ui/Error';
+import Bookings from './pages/Bookings';
+import Guests from './pages/Guests';
+import Villas from './pages/Villas';
+import Settings from './pages/Settings';
+import AddNewVilla from './features/villas/AddNewVilla';
+import VillaDetails from './features/villas/VillaDetails';
+import RegisterGuest from './features/bookings/RegisterGuest';
+import NewBooking from './features/bookings/NewBooking';
 
 const router = createBrowserRouter([
   {
@@ -21,39 +21,39 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Dashboard />,
       },
       {
-        path: "/bookings",
+        path: '/bookings',
         element: <Bookings />,
       },
       {
-        path: "/villas",
+        path: '/villas',
         element: <Villas />,
       },
       {
-        path: "/villas/:villaId",
+        path: '/villas/:villaId',
         element: <VillaDetails />,
       },
       {
-        path: "/villas/newvilla",
+        path: '/villas/newvilla',
         element: <AddNewVilla />,
       },
       {
-        path: "/guests",
+        path: '/guests',
         element: <Guests />,
       },
       {
-        path: "/settings",
+        path: '/settings',
         element: <Settings />,
       },
       {
-        path: "/bookings/newbooking/:villaName",
+        path: '/bookings/newbooking/:villaName',
         element: <RegisterGuest />,
       },
       {
-        path: "/bookings/newbooking/:villaName/:guestId",
+        path: '/bookings/newbooking/:villaName/:guestId',
         element: <NewBooking />,
       },
     ],
@@ -68,9 +68,9 @@ export default function App() {
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
         <Toaster
-          position="bottom-left"
+          position='bottom-left'
           gutter={12}
-          containerStyle={{ margin: "8px" }}
+          containerStyle={{ margin: '8px' }}
           toastOptions={{
             success: {
               duration: 3000,
@@ -79,11 +79,11 @@ export default function App() {
               duration: 5000,
             },
             style: {
-              fontSize: "20px",
-              maxWidth: "500px",
-              padding: "16px 24px",
-              backgroundColor: "#e7e5e4",
-              color: "#525252",
+              fontSize: '20px',
+              maxWidth: '500px',
+              padding: '16px 24px',
+              backgroundColor: '#e7e5e4',
+              color: '#525252',
             },
           }}
         />
