@@ -1,12 +1,14 @@
 import { useNumberOfVillas } from '../../hooks/useNumberOfVillas';
 import { useStays } from '../../hooks/useStays';
+import { HiOutlineCalendarDays, HiOutlineChartBar } from 'react-icons/hi2';
 import Loader from '../../ui/Loader';
+import SummaryTemplate from '../../ui/SummaryTemplate';
 
 export function CurrentlyBookedSummary() {
   const { stays } = useStays();
   const { villasNumber } = useNumberOfVillas();
 
-  if (!stays) return <Loader />;
+  if (!stays || !villasNumber) return <Loader />;
 
   const currentDate = new Date();
 
@@ -21,22 +23,14 @@ export function CurrentlyBookedSummary() {
 
   const occupacyRate = (numberOfBooking / numberOfVillas) * 100;
 
-  console.log(occupacyRate);
-
   return (
     <>
-      <div
-        className='w-1/4 rounded-xl  border
-         border-neutral-400 bg-neutral-200'>
-        <h2 className=' px-4 py-2 italic text-neutral-600 '>Currently booked</h2>
-        <p className='px-4 py-2 text-neutral-800'>{numberOfBooking}</p>
-      </div>
-      <div
-        className='w-1/4 rounded-xl  border
-       border-neutral-400 bg-neutral-200'>
-        <h2 className=' px-4 py-2 italic text-neutral-600 '>Occupacy rate</h2>
-        <p className='px-4 py-2 text-neutral-800'>{occupacyRate}%</p>
-      </div>
+      <SummaryTemplate data={numberOfBooking} title='Currently booked'>
+        <HiOutlineCalendarDays className='text-[70px] text-[#30668f]' />
+      </SummaryTemplate>
+      <SummaryTemplate data={occupacyRate} title='Occupacy rate' percent='%'>
+        <HiOutlineChartBar className='text-[70px] text-[#308f7c] ' />
+      </SummaryTemplate>
     </>
   );
 }

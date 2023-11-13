@@ -1,5 +1,7 @@
+import { LiaMoneyBillWaveSolid } from 'react-icons/lia';
 import { useSales } from '../../hooks/useSales';
 import Loader from '../../ui/Loader';
+import SummaryTemplate from '../../ui/SummaryTemplate';
 
 export function SalesSummary() {
   const { sales } = useSales();
@@ -15,11 +17,8 @@ export function SalesSummary() {
 
   const totalSalesValue = last30DaysSales.reduce((total, sale) => total + sale.cost, 0);
   return (
-    <div
-      className='w-1/4 rounded-xl  border
-         border-neutral-400 bg-neutral-200'>
-      <h2 className=' px-4 py-2 italic text-neutral-600 '>Sales</h2>
-      <p className='px-4 py-2 text-neutral-800'>${totalSalesValue}</p>
-    </div>
+    <SummaryTemplate data={totalSalesValue} title='Sales' currency='$'>
+      <LiaMoneyBillWaveSolid className='text-[70px] text-[#308f59] ' />
+    </SummaryTemplate>
   );
 }

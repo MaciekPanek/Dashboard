@@ -1,5 +1,5 @@
-import Chart from "react-google-charts";
-import { useSales } from "../../hooks/useSales";
+import Chart from 'react-google-charts';
+import { useSales } from '../../hooks/useSales';
 
 function SalesChart() {
   const { sales } = useSales();
@@ -11,9 +11,9 @@ function SalesChart() {
     const aggregatedSales = {};
 
     sales.forEach((sale) => {
-      const day = new Date(sale.created_at).toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "short",
+      const day = new Date(sale.created_at).toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'short',
       });
       if (!aggregatedSales[day]) {
         aggregatedSales[day] = 0;
@@ -29,9 +29,9 @@ function SalesChart() {
   const last30Days = Array.from({ length: 30 }, (_, index) => {
     const currentDate = new Date();
     currentDate.setDate(currentDate.getDate() - index);
-    return currentDate.toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "short",
+    return currentDate.toLocaleDateString('en-US', {
+      day: 'numeric',
+      month: 'short',
     });
   }).reverse();
 
@@ -40,21 +40,21 @@ function SalesChart() {
 
   const options = {
     // title: "Sales for last 30 days",
-    curveType: "function",
-    series: [{ color: "#7d7d7d" }],
-    intervals: { style: "area" },
-    legend: "none",
-    backgroundColor: "#e5e5e5",
+    curveType: 'function',
+    series: [{ color: '#d6af00' }],
+    intervals: { style: 'area' },
+    legend: 'none',
+    backgroundColor: '#e5e5e5',
   };
 
   return (
     <Chart
-      chartType="LineChart"
-      graph_id="chart1"
-      id="chart1"
-      width="100%"
-      height="400px"
-      data={[["Day", "Sales"], ...chartData]}
+      chartType='LineChart'
+      graph_id='chart1'
+      id='chart1'
+      width='100%'
+      height='400px'
+      data={[['Day', 'Sales'], ...chartData]}
       options={options}
     />
   );
