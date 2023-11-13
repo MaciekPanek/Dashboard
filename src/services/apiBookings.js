@@ -1,11 +1,9 @@
-import supabase from "./supabase";
+import supabase from './supabase';
 
 export async function getBookings() {
   const { data, error } = await supabase
-    .from("Bookings")
-    .select(
-      "*, Villas(name), Guests(fullName, email, flag, country, phoneNumber, id)"
-    );
+    .from('Bookings')
+    .select('*, Villas(name), Guests(fullName, email, flag, country, phoneNumber, id)');
 
   if (error) {
     console.error(error);
@@ -16,9 +14,7 @@ export async function getBookings() {
 }
 
 export async function getSales() {
-  const { data, error } = await supabase
-    .from("Bookings")
-    .select("cost, created_at");
+  const { data, error } = await supabase.from('Bookings').select('cost, created_at, arrivalDate');
 
   if (error) {
     console.error(error);
@@ -27,10 +23,9 @@ export async function getSales() {
 
   return data;
 }
+
 export async function getStays() {
-  const { data, error } = await supabase
-    .from("Bookings")
-    .select("arrivalDate, departureDate, created_at");
+  const { data, error } = await supabase.from('Bookings').select('arrivalDate, departureDate, created_at');
 
   if (error) {
     console.error(error);
@@ -41,10 +36,8 @@ export async function getStays() {
 }
 export async function getArrivalsAndDepartures() {
   const { data, error } = await supabase
-    .from("Bookings")
-    .select(
-      "arrivalDate, departureDate, guestsNum, Villas(name), Guests(fullName, flag)"
-    );
+    .from('Bookings')
+    .select('arrivalDate, departureDate, guestsNum, Villas(name), Guests(fullName, flag)');
 
   if (error) {
     console.error(error);
@@ -56,7 +49,7 @@ export async function getArrivalsAndDepartures() {
 
 export async function createBooking(newBooking) {
   const { data, error } = await supabase
-    .from("Bookings")
+    .from('Bookings')
     .insert([{ ...newBooking }])
     .select();
 
