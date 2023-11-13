@@ -1,6 +1,7 @@
 import { useArrivalsAndDepartures } from "../../hooks/useArrivalsAndDepartures";
 import Loader from "../../ui/Loader";
 import Departure from "./Departure";
+import NoActivity from "./NoActivity";
 
 function Departures() {
   const { arrivals } = useArrivalsAndDepartures();
@@ -15,7 +16,11 @@ function Departures() {
   );
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 ">
+      {todayDepartures.length === 0 && (
+        <NoActivity>No departures today</NoActivity>
+      )}
+
       {todayDepartures.map((arrival) => (
         <Departure arrival={arrival} key={Math.random()} />
       ))}
