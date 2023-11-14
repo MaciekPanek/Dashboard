@@ -1,8 +1,10 @@
 import Chart from 'react-google-charts';
 import { useSales } from '../../hooks/useSales';
+import { useDarkMode } from '../../context/DarkModeContext';
 
 function SalesChart() {
   const { sales } = useSales();
+  const { isDarkMode } = useDarkMode();
 
   if (!sales) return null;
 
@@ -44,7 +46,17 @@ function SalesChart() {
     series: [{ color: '#d6af00' }],
     intervals: { style: 'area' },
     legend: 'none',
-    backgroundColor: '#e5e5e5',
+    backgroundColor: `${isDarkMode ? '#525252' : '#e5e5e5'}`,
+    hAxis: {
+      textStyle: {
+        color: isDarkMode ? '#CCCCCC' : '#333333', // Adjust the text color for the horizontal axis
+      },
+    },
+    vAxis: {
+      textStyle: {
+        color: isDarkMode ? '#CCCCCC' : '#333333', // Adjust the text color for the horizontal axis
+      },
+    },
   };
 
   return (

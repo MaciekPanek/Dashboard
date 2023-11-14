@@ -38,7 +38,7 @@ function Bookings() {
       {Object.keys(groupedBookings).map((villaName) => (
         <div
           key={villaName}
-          className='bg-neutral-200 dark:bg-dark-400 border border-neutral-400 dark:border-neutral-200 h-min p-4 w-4/5 rounded-2xl'>
+          className='bg-neutral-200 dark:bg-neutral-600 border border-neutral-400 dark:border-neutral-200 h-min p-4 w-4/5 rounded-2xl'>
           <div className='flex flex-col items-center justify-center '>
             <h2 className='text-neutral-600 dark:text-neutral-200 text-3xl py-2 italic  cursor-pointer'>
               Villa: {villaName}
@@ -65,9 +65,7 @@ function Bookings() {
               ))}
 
               <div className='flex justify-end pt-5'>
-                <NavLink
-                  to={`newbooking/${villaName}`}
-                  className='rounded-full px-6 py-2 bg-neutral-400 border-solid border-neutral-400 text-neutral-50 flex items-center gap-2 hover:scale-105 duration-300  '>
+                <NavLink to={`newbooking/${villaName}`} className='buttonStyle '>
                   Book new guest for this villa
                 </NavLink>
               </div>

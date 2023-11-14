@@ -14,12 +14,12 @@ import {
 function Navbar() {
   return (
     <>
-      <nav className='bg-stone-100 h-screen w-[15%] flex items-start border-r-2 border-r-neutral-300   flex-col  fixed '>
-        <div className='flex items-center gap-5 border-b-2 border-b-neutral-300 py-5 w-full pl-12  '>
+      <nav className='bg-stone-100 dark:bg-dark-700 h-screen w-[15%] flex items-start border-r-2 border-r-neutral-300  dark:border-r-neutral-500   flex-col  fixed '>
+        <div className='flex items-center gap-5 border-b-2 border-b-neutral-300 dark:border-b-neutral-500  py-5 w-full pl-12  '>
           <img src='/photo.jpeg' className='w-20 h-20 rounded-full object-cover  ' />
-          <p className='text-3xl text-neutral-700 '>Name</p>
+          <p className='text-3xl text-neutral-600 dark:text-neutral-300 '>Name</p>
         </div>
-        <ul className='flex flex-col items-start px-4  border-b-2 border-b-neutral-300  w-full py-20 '>
+        <ul className='flex flex-col items-start px-4  border-b-2 border-b-neutral-300 dark:border-b-neutral-500   w-full py-20 '>
           <NavItem to='/'>
             <HiOutlineHome />
             <span>Home</span>
@@ -44,7 +44,7 @@ function Navbar() {
         <Uploader />
         <ThemeChangeButton />
         <div className=' flex items-end w-full h-full  '>
-          <button className='pl-12 py-10 text-3xl text-neutral-500 mb-5 flex flex-row items-center gap-3  '>
+          <button className='pl-12 py-10 text-3xl text-neutral-500 dark:text-neutral-300 mb-5 flex flex-row items-center gap-3  '>
             <HiArrowLeftOnRectangle />
             <span>Logout</span>
           </button>
