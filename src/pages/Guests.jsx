@@ -15,13 +15,13 @@ function Guests() {
   );
 
   return (
-    <section className='bg-stone-100 min-h-screen p-10'>
+    <section className='bg-stone-100 dark:bg-dark-600 min-h-screen p-10'>
       <div className='flex justify-center'>
         <input
           value={searchedGuest}
           onChange={(e) => setSearchedGuest(e.target.value)}
           placeholder='Search for guest'
-          className='w-3/5 bg-neutral-200 rounded-full px-5 py-2 mb-10 focus:outline-none text-neutral-600'
+          className='w-3/5 bg-neutral-200 dark:bg-neutral-500 rounded-full px-5 py-2 mb-10 focus:outline-none text-neutral-600 dark:text-neutral-300 dark:placeholder:text-neutral-300 '
         />
       </div>
       <div className='flex flex-wrap justify-center gap-5'>
