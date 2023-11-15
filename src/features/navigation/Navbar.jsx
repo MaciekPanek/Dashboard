@@ -1,4 +1,5 @@
 import Uploader from '../../data/Uploader';
+import { useLogout } from '../../hooks/useLogout';
 import ThemeChangeButton from '../settings/ThemeChangeButton';
 import NavItem from './NavItem';
 
@@ -12,6 +13,8 @@ import {
 } from 'react-icons/hi2';
 
 function Navbar() {
+  const { logout, isLoading } = useLogout();
+
   return (
     <>
       <nav className='bg-stone-100 dark:bg-dark-700 h-screen w-[15%] flex items-start border-r-2 border-r-neutral-300  dark:border-r-neutral-500   flex-col  fixed '>
@@ -48,7 +51,9 @@ function Navbar() {
         <Uploader />
         <ThemeChangeButton />
         <div className=' flex items-end w-full h-full  '>
-          <button className='pl-12 py-10 text-3xl text-neutral-500 dark:text-neutral-300 mb-5 flex flex-row items-center gap-3  '>
+          <button
+            onClick={() => logout()}
+            className='pl-12 py-10 text-3xl text-neutral-500 dark:text-neutral-300 mb-5 flex flex-row items-center gap-3  '>
             <HiArrowLeftOnRectangle />
             <span>Logout</span>
           </button>

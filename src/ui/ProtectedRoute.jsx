@@ -1,37 +1,28 @@
-// import { useNavigate } from "react-router-dom";
-// import { useUser } from "../features/authentication/useUser";
-// import Spinner from "./Spinner";
-// import { styled } from "styled-components";
-// import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import Loader from './Loader';
+import { useUser } from '../hooks/useUser';
 
-// const FullPage = styled.div`
-//   height: 100vh;
-//   background-color: var(--color-grey-50);
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// `;
+function ProtectedRoute({ children }) {
+  const navigate = useNavigate();
 
-// function ProtectedRoute({ children }) {
-//   const navigate = useNavigate();
+  const { isLoading, isAuthenticated } = useUser();
 
-//   const { isLoading, isAuthenticated } = useUser();
+  useEffect(
+    function () {
+      if (!isAuthenticated && !isLoading) navigate('/login');
+    },
+    [isLoading, isAuthenticated, navigate]
+  );
 
-//   useEffect(
-//     function () {
-//       if (!isAuthenticated && !isLoading) navigate("/login");
-//     },
-//     [isLoading, isAuthenticated, navigate]
-//   );
+  if (isLoading)
+    return (
+      <div className='h-screen bg-neutral-100 dark:bg-dark-600 flex items-center justify-center '>
+        <Loader />
+      </div>
+    );
 
-//   if (isLoading)
-//     return (
-//       <FullPage>
-//         <Spinner />
-//       </FullPage>
-//     );
+  if (isAuthenticated) return children;
+}
 
-//   if (isAuthenticated) return children;
-// }
-
-// export default ProtectedRoute;
+export default ProtectedRoute;

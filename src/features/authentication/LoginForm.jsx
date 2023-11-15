@@ -5,27 +5,28 @@ import { useLogin } from '../../hooks/useLogin';
 import LoginFormRow from '../../ui/LoginFormRow';
 
 function LoginForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('maciek@example.com');
+  const [password, setPassword] = useState('123456');
   const { onLogin, onLoginLoad } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
 
-    // onLogin(
-    //   { email, password },
-    //   {
-    //     onSettled: () => {
-    //       setEmail("");
-    //       setPassword("");
-    //     },
-    //   }
-    // );
+    onLogin(
+      { email, password },
+      {
+        onSettled: () => {
+          setEmail('');
+          setPassword('');
+        },
+      }
+    );
   }
 
   return (
     <div className=' flex flex-col justify-center items-center  '>
+      <img src='/logo.png' />
       <h1 className='text-center italic text-[50px] text-neutral-500 dark:text-neutral-300 py-8   '>
         Log in to your account!
       </h1>

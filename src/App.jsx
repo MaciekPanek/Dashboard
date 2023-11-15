@@ -15,10 +15,15 @@ import RegisterGuest from './features/bookings/RegisterGuest';
 import NewBooking from './features/bookings/NewBooking';
 import { DarkModeProvider } from './context/DarkModeContext';
 import Login from './pages/Login';
+import ProtectedRoute from './ui/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <ProtectedRoute>
+        <AppLayout />
+      </ProtectedRoute>
+    ),
     errorElement: <Error />,
 
     children: [
