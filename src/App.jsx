@@ -14,6 +14,7 @@ import VillaDetails from './features/villas/VillaDetails';
 import RegisterGuest from './features/bookings/RegisterGuest';
 import NewBooking from './features/bookings/NewBooking';
 import { DarkModeProvider } from './context/DarkModeContext';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         element: <NewBooking />,
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
 ]);
 

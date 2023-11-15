@@ -33,7 +33,7 @@ function AddNewVilla() {
     <section className='bg-stone-100 dark:bg-dark-600 min-h-screen '>
       <div className='flex justify-center min-h-screen w-full items-center '>
         <form onSubmit={handleSubmit(onSubmit)} className=' flex flex-col w-3/4 '>
-          <h1 className='text-center italic text-[50px] text-neutral-500 py-8  border-b-solid border-neutral-200  dark:border-neutral-500 border-b-2 '>
+          <h1 className='text-center italic text-[50px] text-neutral-500 dark:text-neutral-300 py-8  border-b-solid border-neutral-200  dark:border-neutral-500 border-b-2 '>
             Create new villa for your guests!
           </h1>
           <FormRow error={errors?.name?.message}>
