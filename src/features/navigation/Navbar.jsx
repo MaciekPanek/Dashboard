@@ -1,5 +1,6 @@
 import Uploader from '../../data/Uploader';
 import { useLogout } from '../../hooks/useLogout';
+import Loader from '../../ui/Loader';
 import ThemeChangeButton from '../settings/ThemeChangeButton';
 import NavItem from './NavItem';
 
@@ -50,6 +51,7 @@ function Navbar() {
         </ul>
         <Uploader />
         <ThemeChangeButton />
+        <Loader />
         <div className=' flex items-end w-full h-full  '>
           <button
             onClick={() => logout()}
