@@ -13,7 +13,7 @@ function SignupForm() {
 
   return (
     <div className=' flex flex-col justify-center items-center w-3/4 '>
-      <h1 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 '>Create new user!</h1>
+      <h3 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 '>Create new user!</h3>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='border border-neutral-300 flex flex-col rounded-xl bg-neutral-200 dark:bg-neutral-600 w-full px-5 '>
@@ -22,7 +22,7 @@ function SignupForm() {
             className='inputStyle'
             placeholder='Full name'
             type='text'
-            id='fullName'
+            id='fullNameSignUp'
             disabled={isLoading}
             {...register('fullName', { required: 'this field is required' })}
           />
@@ -33,7 +33,7 @@ function SignupForm() {
             className='inputStyle'
             placeholder='Email'
             type='email'
-            id='email'
+            id='emailSignUp'
             disabled={isLoading}
             {...register('email', {
               required: 'this field is required',
@@ -50,7 +50,7 @@ function SignupForm() {
             className='inputStyle'
             type='password'
             placeholder='Password (min 8 characters)'
-            id='password'
+            id='passwordSignUp'
             disabled={isLoading}
             {...register('password', {
               required: 'this field is required',
@@ -67,7 +67,7 @@ function SignupForm() {
             className='inputStyle'
             placeholder='Repeat password'
             type='password'
-            id='passwordConfirm'
+            id='passwordConfirmSignUp'
             disabled={isLoading}
             {...register('passwordConfirm', {
               required: 'this field is required',

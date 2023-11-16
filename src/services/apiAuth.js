@@ -1,4 +1,4 @@
-import supabase, { supabaseUrl } from "./supabase";
+import supabase, { supabaseUrl } from './supabase';
 
 export async function signup({ fullName, email, password }) {
   const { data, error } = await supabase.auth.signUp({
@@ -7,7 +7,7 @@ export async function signup({ fullName, email, password }) {
     options: {
       data: {
         fullName,
-        avatar: "",
+        avatar: '',
       },
     },
   });
@@ -58,9 +58,7 @@ export async function updateCurrentUser({ fullName, password, avatar }) {
 
   const fileName = `avatar-${data.user.id}-${Math.random()}`;
 
-  const { error: storageError } = await supabase.storage
-    .from("avatars")
-    .upload(fileName, avatar);
+  const { error: storageError } = await supabase.storage.from('avatars').upload(fileName, avatar);
 
   if (storageError) throw new Error(error.message);
 

@@ -38,25 +38,25 @@ function UpdateUserDataForm() {
 
   return (
     <div className=' flex flex-col justify-center items-center w-3/4 '>
-      <h1 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 pt-10'>Update user!</h1>
+      <h3 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 pt-10'>Update user!</h3>
       <form
         onSubmit={handleSubmit}
         className='border border-neutral-300 flex flex-col rounded-xl bg-neutral-200 dark:bg-neutral-600 w-full px-5 '>
         <FormRow>
-          <input value={email} disabled className='inputStyle dark:bg-neutral-400 cursor-not-allowed ' />
+          <input value={email} disabled className='inputStyle dark:bg-neutral-400 bg-neutral-100 cursor-not-allowed ' />
         </FormRow>
-        <FormRow label='Full name'>
+        <FormRow>
           <input
             type='text'
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            id='fullName'
+            id='fullNameUpdate'
             placeholder='Full name'
             className='inputStyle'
             disabled={isUpdating}
           />
         </FormRow>
-        <FormRow label='Avatar image'>
+        <FormRow>
           <input
             id='avatar'
             type='file'
