@@ -1,4 +1,5 @@
-import SignupForm from '../features/settings/SignupForm';
+import SignupForm from '../features/authentication/SignupForm';
+import UpdateUserDataForm from '../features/authentication/UpdateUserDataForm';
 import ThemeChangeButton from '../features/settings/ThemeChangeButton';
 
 function Settings() {
@@ -9,6 +10,9 @@ function Settings() {
       </div>
       <div className='flex justify-center '>
         <SignupForm />
+      </div>
+      <div className='flex justify-center '>
+        <UpdateUserDataForm />
       </div>
     </section>
   );

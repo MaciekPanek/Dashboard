@@ -13,7 +13,7 @@ function SignupForm() {
 
   return (
     <div className=' flex flex-col justify-center items-center w-3/4 '>
-      <h1 className='text-center italic text-[50px] text-neutral-500 dark:text-neutral-300 pb-3 '>Create new user!</h1>
+      <h1 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 '>Create new user!</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='border border-neutral-300 flex flex-col rounded-xl bg-neutral-200 dark:bg-neutral-600 w-full px-5 '>
