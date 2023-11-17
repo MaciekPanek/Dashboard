@@ -1,11 +1,12 @@
-import { add } from "date-fns";
+import { add } from 'date-fns';
+import { guests } from './guests';
+import villas from './villas';
 
 function fromToday(numDays, withTime = false) {
   const date = add(new Date(), { days: numDays });
   if (!withTime) date.setUTCHours(0, 0, 0, 0);
   return date.toISOString().slice(0, -1);
 }
-
 export const bookings = [
   // CABIN 001
   {
@@ -14,8 +15,7 @@ export const bookings = [
     departureDate: fromToday(7),
     villaId: 1,
     guestId: 2,
-    notes:
-      "I have a gluten allergy and would like to request a gluten-free breakfast.",
+    notes: 'I have a gluten allergy and would like to request a gluten-free breakfast.',
 
     guestsNum: 1,
   },
@@ -25,7 +25,7 @@ export const bookings = [
     departureDate: fromToday(-13),
     villaId: 1,
     guestId: 3,
-    notes: "",
+    notes: '',
     guestsNum: 2,
   },
   {
@@ -34,7 +34,7 @@ export const bookings = [
     departureDate: fromToday(18),
     villaId: 1,
     guestId: 4,
-    notes: "",
+    notes: '',
     guestsNum: 2,
   },
 
@@ -45,7 +45,7 @@ export const bookings = [
     departureDate: fromToday(-29),
     villaId: 1,
     guestId: 5,
-    notes: "",
+    notes: '',
     guestsNum: 2,
   },
   {
@@ -54,7 +54,7 @@ export const bookings = [
     departureDate: fromToday(18),
     villaId: 1,
     guestId: 6,
-    notes: "",
+    notes: '',
     guestsNum: 2,
   },
   {
@@ -63,7 +63,7 @@ export const bookings = [
     departureDate: fromToday(48),
     villaId: 2,
     guestId: 7,
-    notes: "",
+    notes: '',
     guestsNum: 2,
   },
 
@@ -74,7 +74,7 @@ export const bookings = [
     departureDate: fromToday(-20),
     villaId: 1,
     guestId: 8,
-    notes: "",
+    notes: '',
     guestsNum: 4,
   },
   {
@@ -83,7 +83,7 @@ export const bookings = [
     departureDate: fromToday(0),
     villaId: 3,
     guestId: 9,
-    notes: "We will be bringing our small dog with us",
+    notes: 'We will be bringing our small dog with us',
     guestsNum: 3,
   },
   {
@@ -92,7 +92,7 @@ export const bookings = [
     departureDate: fromToday(-11),
     villaId: 3,
     guestId: 10,
-    notes: "",
+    notes: '',
     guestsNum: 4,
   },
 
@@ -103,7 +103,7 @@ export const bookings = [
     departureDate: fromToday(8),
     villaId: 4,
     guestId: 11,
-    notes: "",
+    notes: '',
     guestsNum: 4,
   },
   {
@@ -112,7 +112,7 @@ export const bookings = [
     departureDate: fromToday(17),
     villaId: 4,
     guestId: 12,
-    notes: "",
+    notes: '',
     guestsNum: 4,
   },
   {
@@ -121,7 +121,7 @@ export const bookings = [
     departureDate: fromToday(19),
     villaId: 4,
     guestId: 13,
-    notes: "",
+    notes: '',
     guestsNum: 1,
   },
 
@@ -132,7 +132,7 @@ export const bookings = [
     departureDate: fromToday(21),
     villaId: 5,
     guestId: 14,
-    notes: "",
+    notes: '',
     guestsNum: 5,
   },
   {
@@ -141,7 +141,7 @@ export const bookings = [
     departureDate: fromToday(-4),
     villaId: 5,
     guestId: 15,
-    notes: "",
+    notes: '',
     guestsNum: 4,
   },
   {
@@ -150,7 +150,7 @@ export const bookings = [
     departureDate: fromToday(-1),
     villaId: 5,
     guestId: 16,
-    notes: "",
+    notes: '',
     guestsNum: 6,
   },
 
@@ -170,7 +170,7 @@ export const bookings = [
     departureDate: fromToday(-9),
     villaId: 6,
     guestId: 18,
-    notes: "I will need a rollaway bed for one of the guests",
+    notes: 'I will need a rollaway bed for one of the guests',
     guestsNum: 4,
   },
   {
@@ -179,7 +179,7 @@ export const bookings = [
     departureDate: fromToday(-1),
     villaId: 6,
     guestId: 19,
-    notes: "",
+    notes: '',
     guestsNum: 6,
   },
 
@@ -190,7 +190,7 @@ export const bookings = [
     departureDate: fromToday(23),
     villaId: 7,
     guestId: 20,
-    notes: "",
+    notes: '',
     guestsNum: 8,
   },
   {
@@ -199,7 +199,7 @@ export const bookings = [
     departureDate: fromToday(50),
     villaId: 7,
     guestId: 21,
-    notes: "",
+    notes: '',
     guestsNum: 7,
   },
   {
@@ -208,7 +208,7 @@ export const bookings = [
     departureDate: fromToday(37),
     villaId: 7,
     guestId: 22,
-    notes: "",
+    notes: '',
     guestsNum: 6,
   },
 
@@ -219,8 +219,7 @@ export const bookings = [
     departureDate: fromToday(0),
     villaId: 8,
     guestId: 1,
-    notes:
-      "My wife has a gluten allergy so I would like to request a gluten-free breakfast if possible",
+    notes: 'My wife has a gluten allergy so I would like to request a gluten-free breakfast if possible',
     guestsNum: 9,
   },
   {
@@ -229,8 +228,7 @@ export const bookings = [
     departureDate: fromToday(5),
     villaId: 8,
     guestId: 23,
-    notes:
-      "I am celebrating my anniversary, can you arrange for any special amenities or decorations?",
+    notes: 'I am celebrating my anniversary, can you arrange for any special amenities or decorations?',
     guestsNum: 10,
   },
   {
@@ -239,7 +237,7 @@ export const bookings = [
     departureDate: fromToday(13),
     villaId: 8,
     guestId: 24,
-    notes: "",
+    notes: '',
     guestsNum: 7,
   },
 ];

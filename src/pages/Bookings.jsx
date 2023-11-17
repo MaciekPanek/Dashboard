@@ -4,18 +4,24 @@ import { useBookings } from '../hooks/useBookings';
 import Loader from '../ui/Loader';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useVillas } from '../hooks/useVillas';
+
+// ... (your imports)
+
+// ... (your imports)
 
 function Bookings() {
   const { isLoading, bookings } = useBookings();
+  const { villas } = useVillas();
+
   const [expandedVilla, setExpandedVilla] = useState(null);
 
   if (isLoading || bookings === undefined) {
     return <Loader />;
   }
 
-  // console.log(bookings);
-
   if (!bookings) return <Loader />;
+  if (!villas) return <Loader />;
 
   const groupedBookings = {};
 
@@ -35,38 +41,43 @@ function Bookings() {
 
   return (
     <section className='flex gap-5 dark:bg-dark-600 bg-stone-100 min-h-screen items-center  flex-col p-20'>
-      {Object.keys(groupedBookings).map((villaName) => (
+      {villas.map((villa) => (
         <div
-          key={villaName}
+          key={villa.name}
           className='bg-neutral-200 dark:bg-neutral-600 border border-neutral-400 dark:border-neutral-200 h-min p-4 w-4/5 rounded-2xl'>
           <div className='flex flex-col items-center justify-center '>
             <h2 className='text-neutral-600 dark:text-neutral-200 text-3xl py-2 italic  cursor-pointer'>
-              Villa: {villaName}
+              Villa: {villa.name}
             </h2>
             <button
-              onClick={() => setExpandedVilla(expandedVilla === villaName ? null : villaName)}
+              onClick={() => setExpandedVilla(expandedVilla === villa.name ? null : villa.name)}
               className='flex items-center gap-2 text-neutral-600 dark:text-neutral-300 cursor-pointer hover:scale-105 duration-300 underline '>
-              {expandedVilla !== villaName && 'Unfold bookings for this villa'}
-              {expandedVilla !== villaName && <HiArrowDown />}
-              {expandedVilla === villaName && 'Fold bookings for this villa'}
-              {expandedVilla === villaName && <HiArrowUp />}
+              {expandedVilla !== villa.name && 'Unfold bookings for this villa'}
+              {expandedVilla !== villa.name && <HiArrowDown />}
+              {expandedVilla === villa.name && 'Fold bookings for this villa'}
+              {expandedVilla === villa.name && <HiArrowUp />}
             </button>
           </div>
 
-          {expandedVilla === villaName && (
+          {expandedVilla === villa.name && (
             <div>
               <div className='flex gap-5 justify-center italic text-neutral-600 dark:text-neutral-200 border-b border-b-neutral-400 dark:border-b-neutral-200 my-3 text-center '>
                 <p className='w-1/5'>Guest:</p>
                 <p className='w-1/5'>Arrival date:</p>
                 <p className='w-1/5'>Departure date:</p>
               </div>
-              {groupedBookings[villaName].map((booking) => (
+
+              {groupedBookings[villa.name]?.length === 0 && (
+                <p className='text-neutral-600 dark:text-neutral-200 text-center my-3'>No bookings for this villa.</p>
+              )}
+
+              {groupedBookings[villa.name]?.map((booking) => (
                 <Booking booking={booking} key={booking.id} />
               ))}
 
               <div className='flex justify-end pt-5'>
-                <NavLink to={`newbooking/${villaName}`} className='buttonStyle '>
-                  Book new guest for this villa
+                <NavLink to={`newbooking/${villa.name}`} className='buttonStyle '>
+                  Book a new guest for this villa
                 </NavLink>
               </div>
             </div>
