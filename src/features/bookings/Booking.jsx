@@ -17,15 +17,15 @@ function Booking({ booking }) {
 
   return (
     <div
-      className={`flex gap-5 justify-center rounded-lg text-center mb-1 ${isCurrentDateInRange && 'bg-green-400'} ${
-        invalidDate && 'bg-red-400'
-      } ${awaitingArrivalDate && 'bg-sky-400'} `}>
-      <p className='w-1/5 italic text-neutral-600  '>
+      className={`flex gap-5 justify-around italic text-neutral-600 rounded-lg  mb-1 ${
+        isCurrentDateInRange && 'bg-green-400'
+      } ${invalidDate && 'bg-red-400'} ${awaitingArrivalDate && 'bg-sky-400'} `}>
+      <p className='min-w-[20%]'>
         {fullName}
         <span>{flag}</span>
       </p>
-      <p className='w-1/5 italic text-neutral-600  '>From -- {formattedArrivalDate}</p>
-      <p className='w-1/5 italic text-neutral-600  '>To -- {formattedDepartureDate}</p>
+      <p className=' min-w-[20%] '>From -- {formattedArrivalDate}</p>
+      <p className=' min-w-[20%]'>To -- {formattedDepartureDate}</p>
     </div>
   );
 }

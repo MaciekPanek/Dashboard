@@ -23,7 +23,7 @@ function Villas() {
   const sortedVillas = displayVillas.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <section className='grid grid-cols-fluid gap-10  bg-stone-100 dark:bg-dark-600 min-h-screen auto-rows-max p-10'>
+    <section className='grid grid-cols-fluid gap-10 bg-stone-100 dark:bg-dark-600 min-h-screen auto-rows-max p-10'>
       {sortedVillas.map((villa) => (
         <Villa villa={villa} key={villa.id} />
       ))}

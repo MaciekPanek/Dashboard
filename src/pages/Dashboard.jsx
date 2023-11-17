@@ -8,7 +8,7 @@ function Dashboard() {
       <h1 className=' text-3xl lg:text-[50px] text-neutral-500 dark:text-neutral-300 pb-5 '>
         Dashboard for last 30 days
       </h1>
-      <div className='flex flex-col gap-5 '>
+      <div className='flex flex-col  gap-5 '>
         <DashboardTopChart />
         <DashboardMiddleChart />
         <DashboardBottomChart />

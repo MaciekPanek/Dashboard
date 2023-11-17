@@ -5,12 +5,12 @@ function Villa({ villa }) {
   const { name, capacity, price, image, id } = villa;
 
   return (
-    <div className='w-[400px] hover:cursor-pointer  h-max '>
+    <div className='lg:w-[400px] w-[300px] hover:cursor-pointer justify-self-center   h-max '>
       <div>
-        <img className=' rounded-xl min-w-[400px]  h-[300px] object-cover ' src={image} alt={name} />
+        <img className=' rounded-xl lg:min-w-[400px] min-w-[300px]  h-[300px] object-cover ' src={image} alt={name} />
       </div>
 
-      <div className=' w-[400px]  h-[200px'>
+      <div className='  lg:w-[400px] w-[300px]  h-[200px'>
         <div className='text-neutral-800 dark:text-neutral-200 text-xl py-2 italic leading-5  '>Villa: {name}</div>
         <p className='text-neutral-600 dark:text-neutral-400 text-lg font-light italic leading-6  '>
           Capacity: {capacity} people

@@ -40,11 +40,11 @@ function Bookings() {
   });
 
   return (
-    <section className='flex gap-5 dark:bg-dark-600 bg-stone-100 min-h-screen items-center  flex-col p-20'>
+    <section className='flex gap-5 dark:bg-dark-600 bg-stone-100 min-h-screen items-center  flex-col p-10'>
       {villas.map((villa) => (
         <div
           key={villa.name}
-          className='bg-neutral-200 dark:bg-neutral-600 border border-neutral-400 dark:border-neutral-200 h-min p-4 w-4/5 rounded-2xl'>
+          className='bg-neutral-200 dark:bg-neutral-600 border border-neutral-400 dark:border-neutral-200 h-min p-4 w-full xl:w-4/5 rounded-2xl'>
           <div className='flex flex-col items-center justify-center '>
             <h2 className='text-neutral-600 dark:text-neutral-200 text-3xl py-2 italic  cursor-pointer'>
               Villa: {villa.name}
@@ -61,10 +61,10 @@ function Bookings() {
 
           {expandedVilla === villa.name && (
             <div>
-              <div className='flex gap-5 justify-center italic text-neutral-600 dark:text-neutral-200 border-b border-b-neutral-400 dark:border-b-neutral-200 my-3 text-center '>
-                <p className='w-1/5'>Guest:</p>
-                <p className='w-1/5'>Arrival date:</p>
-                <p className='w-1/5'>Departure date:</p>
+              <div className='flex gap-5 justify-around italic text-neutral-600 dark:text-neutral-200 border-b border-b-neutral-400 dark:border-b-neutral-200 my-3  '>
+                <p className='min-w-[20%]'>Guest:</p>
+                <p className='min-w-[20%]'>Arrival date:</p>
+                <p className='min-w-[20%]'>Departure date:</p>
               </div>
 
               {groupedBookings[villa.name]?.length === 0 && (

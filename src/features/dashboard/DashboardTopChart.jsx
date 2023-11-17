@@ -6,10 +6,14 @@ import { SalesSummary } from './SalesSummary';
 
 function DashboardTopChart() {
   return (
-    <div className='flex gap-5 h-[100px] '>
-      <SalesSummary />
-      <BookingsSummary />
-      <CurrentlyBookedSummary />
+    <div className='flex flex-col xl:flex-row gap-5 min-h-[100px] '>
+      <div className='flex flex-col w-full lg:flex-row gap-5'>
+        <SalesSummary />
+        <BookingsSummary />
+      </div>
+      <div className='flex flex-col w-full lg:flex-row gap-5'>
+        <CurrentlyBookedSummary />
+      </div>
     </div>
   );
 }

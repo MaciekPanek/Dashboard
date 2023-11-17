@@ -1,7 +1,7 @@
 function SummaryTemplate({ children, data, title, currency, percent }) {
   return (
     <div
-      className='w-1/4 rounded-xl flex items-center justify-center gap-10  border
+      className=' w-full rounded-xl flex items-center pl-10 xl:pl-5 gap-10  border
   border-neutral-400 bg-neutral-200 dark:bg-neutral-600'>
       {children}
       <div className='flex flex-col  text-neutral-500 dark:text-neutral-300  '>
