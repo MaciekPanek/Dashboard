@@ -10,7 +10,7 @@ function RegisterGuest() {
   const navigate = useNavigate();
   const { createGuest } = useCreateGuest();
   const { guestId, setGuestId } = useVillaDetails();
-  const [gotToBooking, setGoToBooking] = useState(null);
+  const [goToBooking, setGoToBooking] = useState(null);
 
   const {
     register,
@@ -122,13 +122,15 @@ function RegisterGuest() {
             <button
               onClick={(e) => {
                 e.preventDefault();
+                setGuestId(null);
                 navigate(-1);
               }}
               className='buttonStyle'>
               Back
               <HiOutlineArrowUturnLeft />
             </button>
-            {gotToBooking ? (
+
+            {goToBooking ? (
               <button onClick={handleGoToBooking} className='buttonStyle  '>
                 Book this guest
                 <HiOutlineBookmark />

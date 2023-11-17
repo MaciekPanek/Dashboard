@@ -20,10 +20,11 @@ function Villas() {
 
   // Use contextVillas if available, otherwise fallback to fetched villas
   const displayVillas = contextVillas.length > 0 ? contextVillas : villas;
+  const sortedVillas = displayVillas.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <section className='grid grid-cols-fluid gap-10  bg-stone-100 dark:bg-dark-600 min-h-screen auto-rows-max p-10'>
-      {displayVillas.map((villa) => (
+      {sortedVillas.map((villa) => (
         <Villa villa={villa} key={villa.id} />
       ))}
       <NavLink
