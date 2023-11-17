@@ -12,7 +12,7 @@ function UserAvatar() {
         alt={`avatar of ${fullName}`}
         className='w-12 h-12 rounded-full object-cover  '
       />
-      <span className='text-2xl text-neutral-600 dark:text-neutral-300 '>{fullName}</span>
+      <span className=' md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 '>{fullName}</span>
     </div>
   );
 }
