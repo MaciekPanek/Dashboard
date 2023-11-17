@@ -16,6 +16,7 @@ import NewBooking from './features/bookings/NewBooking';
 import { DarkModeProvider } from './context/DarkModeContext';
 import Login from './pages/Login';
 import ProtectedRoute from './ui/ProtectedRoute';
+import { VillaProvider } from './context/VillaContext';
 
 const router = createBrowserRouter([
   {
@@ -70,37 +71,47 @@ const router = createBrowserRouter([
     element: <Login />,
   },
 ]);
+// const queryClient = new QueryClient();
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // staleTime: 60 * 1000,
+      staleTime: 6000,
+    },
+  },
+});
 
 export default function App() {
   return (
     <VillaDetailsProvider>
-      <DarkModeProvider>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-          <Toaster
-            position='bottom-left'
-            gutter={12}
-            containerStyle={{ margin: '8px' }}
-            toastOptions={{
-              success: {
-                duration: 3000,
-              },
-              error: {
-                duration: 5000,
-              },
-              style: {
-                fontSize: '20px',
-                maxWidth: '500px',
-                padding: '16px 24px',
-                backgroundColor: '#e7e5e4',
-                color: '#525252',
-              },
-            }}
-          />
-        </QueryClientProvider>
-      </DarkModeProvider>
+      <VillaProvider>
+        <DarkModeProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+            <Toaster
+              position='bottom-left'
+              gutter={12}
+              containerStyle={{ margin: '8px' }}
+              toastOptions={{
+                success: {
+                  duration: 3000,
+                },
+                error: {
+                  duration: 5000,
+                },
+                style: {
+                  fontSize: '20px',
+                  maxWidth: '500px',
+                  padding: '16px 24px',
+                  backgroundColor: '#e7e5e4',
+                  color: '#525252',
+                },
+              }}
+            />
+          </QueryClientProvider>
+        </DarkModeProvider>
+      </VillaProvider>
     </VillaDetailsProvider>
   );
 }

@@ -4,21 +4,26 @@ import Villa from '../features/villas/Villa';
 import { useVillas } from '../hooks/useVillas';
 import Loader from '../ui/Loader';
 import NotFound from '../ui/NotFound';
+import { useVillaContext } from '../context/VillaContext';
 
 function Villas() {
   const { isLoading, villas } = useVillas();
+  const { villas: contextVillas } = useVillaContext();
 
-  if (isLoading || villas === undefined) {
+  if (isLoading) {
     return <Loader />;
   }
 
-  if (!villas) return <NotFound />;
+  if (!villas || villas.length === 0) {
+    return <NotFound />;
+  }
 
-  // console.log("Villas array:", villas);
-  //
+  // Use contextVillas if available, otherwise fallback to fetched villas
+  const displayVillas = contextVillas.length > 0 ? contextVillas : villas;
+
   return (
     <section className='grid grid-cols-fluid gap-10  bg-stone-100 dark:bg-dark-600 min-h-screen auto-rows-max p-10'>
-      {villas.map((villa) => (
+      {displayVillas.map((villa) => (
         <Villa villa={villa} key={villa.id} />
       ))}
       <NavLink

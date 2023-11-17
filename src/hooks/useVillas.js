@@ -1,12 +1,26 @@
-import { useQuery } from "@tanstack/react-query";
-import { getVillas } from "../services/apiVillas";
+// useVillas.js
+
+import { useQuery } from '@tanstack/react-query';
+import { getVillas } from '../services/apiVillas';
+import { useVillaContext } from '../context/VillaContext';
+import { useEffect } from 'react';
 
 export function useVillas() {
   const {
     isLoading,
     data: villas,
     error,
-  } = useQuery({ queryKey: ["Villas"], queryFn: getVillas });
+  } = useQuery({
+    queryKey: ['Villas'],
+    queryFn: getVillas,
+  });
 
-  return { isLoading, error, villas };
+  const { setVillasData } = useVillaContext();
+
+  useEffect(() => {
+    if (villas) {
+      setVillasData(villas);
+    }
+  }, [villas, setVillasData]);
+  return { isLoading, error, villas: villas || [] };
 }
