@@ -1,6 +1,4 @@
 import { add } from 'date-fns';
-import { guests } from './guests';
-import villas from './villas';
 
 function fromToday(numDays, withTime = false) {
   const date = add(new Date(), { days: numDays });
@@ -8,7 +6,6 @@ function fromToday(numDays, withTime = false) {
   return date.toISOString().slice(0, -1);
 }
 export const bookings = [
-  // CABIN 001
   {
     created_at: fromToday(-20, true),
     arrivalDate: fromToday(0),
@@ -38,7 +35,6 @@ export const bookings = [
     guestsNum: 2,
   },
 
-  // CABIN 002
   {
     created_at: fromToday(-45, true),
     arrivalDate: fromToday(-45),
@@ -66,8 +62,6 @@ export const bookings = [
     notes: '',
     guestsNum: 2,
   },
-
-  // CABIN 003
   {
     created_at: fromToday(-65, true),
     arrivalDate: fromToday(-25),
@@ -95,8 +89,6 @@ export const bookings = [
     notes: '',
     guestsNum: 4,
   },
-
-  // CABIN 004
   {
     created_at: fromToday(-30, true),
     arrivalDate: fromToday(-4),
@@ -124,8 +116,6 @@ export const bookings = [
     notes: '',
     guestsNum: 1,
   },
-
-  // CABIN 005
   {
     created_at: fromToday(0, true),
     arrivalDate: fromToday(14),
@@ -153,8 +143,6 @@ export const bookings = [
     notes: '',
     guestsNum: 6,
   },
-
-  // CABIN 006
   {
     created_at: fromToday(-3, true),
     arrivalDate: fromToday(0),
@@ -182,8 +170,6 @@ export const bookings = [
     notes: '',
     guestsNum: 6,
   },
-
-  // CABIN 007
   {
     created_at: fromToday(-2, true),
     arrivalDate: fromToday(17),
@@ -211,8 +197,6 @@ export const bookings = [
     notes: '',
     guestsNum: 6,
   },
-
-  // CABIN 008
   {
     created_at: fromToday(-8, true),
     arrivalDate: fromToday(-5),

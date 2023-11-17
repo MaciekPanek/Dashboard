@@ -21,14 +21,15 @@ export function CurrentlyBookedSummary() {
   const numberOfBooking = currentlyBooked.length;
   const numberOfVillas = villasNumber.length;
 
-  const occupacyRate = (numberOfBooking / numberOfVillas) * 100;
+  const occupancyRate = ((numberOfBooking / numberOfVillas) * 100).toFixed(1);
+  const occupancyRateNumber = parseFloat(occupancyRate);
 
   return (
     <>
       <SummaryTemplate data={numberOfBooking} title='Currently booked'>
         <HiOutlineCalendarDays className='text-[70px] text-[#30668f]' />
       </SummaryTemplate>
-      <SummaryTemplate data={occupacyRate} title='Occupacy rate' percent='%'>
+      <SummaryTemplate data={occupancyRateNumber} title='Occupacy rate' percent='%'>
         <HiOutlineChartBar className='text-[70px] text-[#308f7c] ' />
       </SummaryTemplate>
     </>
