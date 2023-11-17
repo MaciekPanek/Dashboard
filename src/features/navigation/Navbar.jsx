@@ -20,8 +20,9 @@ function Navbar() {
   return (
     <>
       <nav className='bg-stone-100 dark:bg-dark-700 h-screen w-[15%] flex items-start border-r-2 border-r-neutral-300  dark:border-r-neutral-500   flex-col  fixed '>
-        <div className=' w-full py-5  flex justify-center  border-b-2 border-b-neutral-300 dark:border-b-neutral-500 '>
+        <div className=' w-full py-5  flex flex-col justify-center items-center gap-3 border-b-2 border-b-neutral-300 dark:border-b-neutral-500 '>
           <img src='/logo.png' className='w-[100px]' alt='logo' />
+          <h1 className='text-3xl italic dark:text-neutral-300 text-neutral-500 '>Villa Rental</h1>
         </div>
         <UserAvatar />
 
