@@ -8,7 +8,7 @@ export function BookingsSummary() {
 
   if (!stays) return <Loader />;
 
-  const currentDate = new Date();
+  const currentDate = new Date(new Date().getFullYear(), 10, 17);
 
   const dateThirtyDaysAgo = new Date().setDate(currentDate.getDate() - 30);
 

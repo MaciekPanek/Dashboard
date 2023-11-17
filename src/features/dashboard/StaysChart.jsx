@@ -14,7 +14,7 @@ function StaysChart() {
   // Filter stays that occurred in the last 30 days
   const last30DaysStays = stays.filter((stay) => {
     const stayCreatedAt = new Date(stay.created_at);
-    const thirtyDaysAgo = new Date();
+    const thirtyDaysAgo = new Date(new Date().getFullYear(), 10, 17);
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
     return stayCreatedAt >= thirtyDaysAgo;
   });

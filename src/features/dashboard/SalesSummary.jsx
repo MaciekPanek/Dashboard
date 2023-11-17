@@ -8,7 +8,7 @@ export function SalesSummary() {
 
   if (!sales) return <Loader />;
 
-  const currentDate = new Date();
+  const currentDate = new Date(new Date().getFullYear(), 10, 17);
 
   const last30DaysSales = sales.filter((sale) => {
     const arrivalDate = new Date(sale.arrivalDate);

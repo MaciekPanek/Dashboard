@@ -10,7 +10,7 @@ export function CurrentlyBookedSummary() {
 
   if (!stays || !villasNumber) return <Loader />;
 
-  const currentDate = new Date();
+  const currentDate = new Date(new Date().getFullYear(), 10, 17);
 
   const currentlyBooked = stays.filter((stay) => {
     const arrivalDate = new Date(stay.arrivalDate);

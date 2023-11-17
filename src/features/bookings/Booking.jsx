@@ -5,7 +5,7 @@ function Booking({ booking }) {
     Guests: { fullName, flag },
   } = booking;
 
-  const currentDate = new Date();
+  const currentDate = new Date(new Date().getFullYear(), 10, 17);
   const isCurrentDateInRange = currentDate >= new Date(arrivalDate) && currentDate <= new Date(departureDate);
 
   const invalidDate = new Date(departureDate) < currentDate;
