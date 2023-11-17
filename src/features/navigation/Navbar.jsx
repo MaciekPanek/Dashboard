@@ -1,6 +1,5 @@
 import Uploader from '../../data/Uploader';
 import { useLogout } from '../../hooks/useLogout';
-import Loader from '../../ui/Loader';
 import UserAvatar from '../authentication/UserAvatar';
 import ThemeChangeButton from '../settings/ThemeChangeButton';
 import NavItem from './NavItem';
@@ -15,7 +14,7 @@ import {
 } from 'react-icons/hi2';
 
 function Navbar() {
-  const { logout, isLoading } = useLogout();
+  const { logout } = useLogout();
 
   return (
     <>
