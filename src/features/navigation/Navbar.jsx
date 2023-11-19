@@ -18,33 +18,33 @@ function Navbar() {
 
   return (
     <>
-      <nav className='bg-stone-100 dark:bg-dark-700 h-screen w-1/4 xl:w-[15%] flex items-start border-r-2 border-r-neutral-300  dark:border-r-neutral-500   flex-col  fixed '>
+      <nav className='bg-stone-100 dark:bg-dark-700 h-screen w-[15%] md:w-1/4 xl:w-[15%] flex items-start border-r-2 border-r-neutral-300 dark:border-r-neutral-500 flex-col fixed '>
         <div className=' w-full py-5  flex flex-col justify-center items-center gap-3 border-b-2 border-b-neutral-300 dark:border-b-neutral-500 '>
-          <img src='/logo.png' className='w-[100px]' alt='logo' />
-          <h1 className='text-3xl italic dark:text-neutral-300 text-neutral-500 '>Villa Rental</h1>
+          <img src='/logo.png' className='md:w-[100px] w-[50px] ' alt='logo' />
+          <h1 className='text-3xl italic dark:text-neutral-300 text-neutral-500 hidden md:inline '>Villa Rental</h1>
         </div>
         <UserAvatar />
 
         <ul className='flex flex-col items-start md:px-4 px-2   border-b-2 border-b-neutral-300 dark:border-b-neutral-500   w-full pb-10 pt-5'>
           <NavItem to='/'>
             <HiOutlineHome />
-            <span>Home</span>
+            <span className='hidden md:inline'>Home</span>
           </NavItem>
           <NavItem to='/bookings'>
             <HiOutlineCalendarDays />
-            <span>Bookings</span>
+            <span className='hidden md:inline'>Bookings</span>
           </NavItem>
           <NavItem to='/villas'>
             <HiOutlineHomeModern />
-            <span>Villas</span>
+            <span className='hidden md:inline'>Villas</span>
           </NavItem>
           <NavItem to='/guests'>
             <HiOutlineUsers />
-            <span>Guests</span>
+            <span className='hidden md:inline'>Guests</span>
           </NavItem>
           <NavItem to='/settings'>
             <HiOutlineCog6Tooth />
-            <span>Settings</span>
+            <span className='hidden md:inline'>Settings</span>
           </NavItem>
         </ul>
         {/* <Uploader />
@@ -54,7 +54,7 @@ function Navbar() {
             onClick={() => logout()}
             className='  py-10 text-3xl text-neutral-500 dark:text-neutral-300 mb-5 flex flex-row items-center gap-3  '>
             <HiArrowLeftOnRectangle />
-            <span>Logout</span>
+            <span className='hidden md:inline'>Logout</span>
           </button>
         </div>
       </nav>
