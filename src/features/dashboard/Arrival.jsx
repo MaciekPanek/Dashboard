@@ -13,8 +13,8 @@ function Arrival({ arrival }) {
   return (
     <div className='flex bg-green-400 rounded-lg text-neutral-600 text-center italic px-5 '>
       <p className='flex gap-3 w-1/3 '>
-        <span>{fullName}</span>
         <span>{flag}</span>
+        <span>{fullName}</span>
       </p>
       <p className='w-1/4'>Villa {name}</p>
       <p className='w-1/4'>
