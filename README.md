@@ -1,6 +1,6 @@
 # Villa Rental
 
-Simple movie website that allows you to search movies, add them to your watchlist and mark them as watched after rating them.
+Dashboard app only for villa rental company employees. Build with React with use of supabase as database for all data. You can play with data using REST Api.
 
 ![Alt text](/public/VillaRentalSS.jpeg?raw=true)
 
