@@ -116,7 +116,7 @@ function NewBooking() {
               placeholder='Special requests'
               id='notes'
               type='text'
-              className='border-2 border-dashed  border-neutral-400 w-1/2 px-3 dark:bg-neutral-500 text-neutral-500 dark:text-neutral-300 outline-none  dark:placeholder:text-neutral-200 '
+              className='border-2 border-dashed  border-neutral-400 sm:w-1/2 px-3 dark:bg-neutral-500 text-neutral-500 dark:text-neutral-300 outline-none  dark:placeholder:text-neutral-200 '
             />
           </FormRow>
           <FormRow className='border-none flex gap-5'>

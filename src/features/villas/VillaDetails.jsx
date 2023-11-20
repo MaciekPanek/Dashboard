@@ -28,7 +28,7 @@ function VillaDetails() {
   if (!selectedVilla) return <NotFound />;
 
   return (
-    <section className='bg-stone-100  dark:bg-dark-600 min-h-screen p-20 flex flex-col gap-20 '>
+    <section className='bg-stone-100  dark:bg-dark-600 min-h-screen p-5 sm:p-10 flex flex-col gap-20 '>
       <VillaDescription selectedVilla={selectedVilla} />
       <div className='flex gap-4 justify-end '>
         <button

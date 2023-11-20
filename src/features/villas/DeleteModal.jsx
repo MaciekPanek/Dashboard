@@ -16,6 +16,7 @@ function DeleteModal({ villaId }) {
     navigate(-1);
   }
 
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   const ref = useOutsideClick(handleClose);
 
   if (!isDeleteModalVisible) {
@@ -26,7 +27,7 @@ function DeleteModal({ villaId }) {
     <div className='modal-container'>
       <div
         ref={ref}
-        className='w-[30%] h-[300px] bg-neutral-100  dark:bg-neutral-500 border border-neutral-400  relative rounded-3xl  '>
+        className='lg:w-[30%] h-[300px] bg-neutral-100  dark:bg-neutral-500 border border-neutral-400  relative rounded-3xl  '>
         <HiXMark
           onClick={handleClose}
           className=' absolute top-3 right-3 text-3xl text-neutral-500 dark:text-neutral-300 font-black hover:cursor-pointer '

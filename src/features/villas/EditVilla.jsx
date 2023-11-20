@@ -79,7 +79,7 @@ function EditVilla({ selectedVilla }) {
           id='image'
           accept='image/*'
           type='file'
-          className='mb-3 px-1 file:rounded-full file:bg-neutral-200 dark:file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 file:px-6 file:py-2 file:mr-5 file:hover:cursor-pointer'
+          className=' mb-3 px-1 w-full file:rounded-full file:bg-neutral-200 dark:file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 sm:file:px-6   sm:file:py-2 file:mr-5 file:hover:cursor-pointer  '
         />
         <span></span>
       </FormRow>
@@ -88,7 +88,7 @@ function EditVilla({ selectedVilla }) {
           {...register('description')}
           placeholder='Description'
           type='text'
-          className='border-2 border-dashed border-neutral-400 dark:bg-neutral-200 w-1/2 px-3 text-neutral-500 outline-none'
+          className='border-2 border-dashed border-neutral-400 dark:bg-neutral-200 sm:w-1/2 px-3 text-neutral-500 outline-none'
         />
         <span></span>
       </FormRow>
