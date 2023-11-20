@@ -2,7 +2,7 @@
 
 Simple movie website that allows you to search movies, add them to your watchlist and mark them as watched after rating them.
 
-![Alt text](/public/MovieSaverSS.png?raw=true)
+![Alt text](/public/VillaRentalSS.jpeg?raw=true)
 
 - Library: [ReactJs](https://react.dev/)
 - Deployment: [Vercel](https://vercel.com/)
