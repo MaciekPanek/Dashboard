@@ -16,7 +16,7 @@ function Guest({ guest }) {
 
   return (
     <div
-      className={`flex gap-1 flex-col w-[500px] bg-neutral-200 dark:bg-neutral-600  p-3 border border-neutral-400  rounded-xl min-h-[150px] italic border-b-[6px] text-neutral-600 dark:text-neutral-300 ${
+      className={`flex gap-1 flex-col w-[500px] bg-neutral-200 dark:bg-neutral-600 min-w-[340px] p-3 border border-neutral-400  rounded-xl min-h-[150px] italic border-b-[6px] text-neutral-600 dark:text-neutral-300 ${
         isCurrentDateInRange && ' border-b-green-500  '
       } ${invalidDate && 'border-b-red-500'} ${awaitingArrivalDate && 'border-b-sky-500'}`}>
       <div className='flex justify-between items-center '>

@@ -6,7 +6,7 @@ import ThemeChangeButton from '../features/settings/ThemeChangeButton';
 function Settings() {
   return (
     <section className=' dark:bg-dark-600 bg-stone-100 min-h-screen '>
-      <div className='flex justify-end mr-20 pt-10 '>
+      <div className='flex sm:justify-end justify-center sm:mr-20  pt-10 '>
         <ThemeChangeButton />
       </div>
       <div className='flex justify-center '>

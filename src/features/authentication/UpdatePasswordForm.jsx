@@ -14,7 +14,7 @@ function UpdatePasswordForm() {
 
   return (
     <div className=' flex flex-col justify-center items-center w-3/4 mb-32 '>
-      <h3 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 pt-10 '>
+      <h3 className='text-center italic md:text-[40px] text-[25px] text-neutral-500 dark:text-neutral-300 py-3 pt-10 '>
         Update password!
       </h3>
       <form
@@ -52,7 +52,7 @@ function UpdatePasswordForm() {
             })}
           />
         </FormRow>
-        <FormRow className={'justify-end gap-5 '}>
+        <FormRow className={'justify-end gap-5 md:gap-5'}>
           <button onClick={reset} className='buttonStyle' type='reset'>
             Cancel
           </button>

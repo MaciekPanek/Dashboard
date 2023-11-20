@@ -13,7 +13,9 @@ function SignupForm() {
 
   return (
     <div className=' flex flex-col justify-center items-center w-3/4 '>
-      <h3 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 '>Create new user!</h3>
+      <h3 className='text-center italic md:text-[40px] text-[25px] text-neutral-500 dark:text-neutral-300 py-3 '>
+        Create new user!
+      </h3>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='border border-neutral-300 flex flex-col rounded-xl bg-neutral-200 dark:bg-neutral-600 w-full px-5 '>
@@ -76,7 +78,7 @@ function SignupForm() {
           />
         </FormRow>
 
-        <FormRow className={'justify-end gap-5 border-none'}>
+        <FormRow className={'justify-end gap-5 border-none md:gap-5'}>
           {/* type is an HTML attribute! */}
           <button className='buttonStyle' type='reset' disabled={isLoading} onClick={reset}>
             Cancel

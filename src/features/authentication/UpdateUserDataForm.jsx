@@ -38,7 +38,9 @@ function UpdateUserDataForm() {
 
   return (
     <div className=' flex flex-col justify-center items-center w-3/4 '>
-      <h3 className='text-center italic text-[40px] text-neutral-500 dark:text-neutral-300 py-3 pt-10'>Update user!</h3>
+      <h3 className='text-center italic md:text-[40px] text-[25px] text-neutral-500 dark:text-neutral-300 py-3 pt-10'>
+        Update user!
+      </h3>
       <form
         onSubmit={handleSubmit}
         className='border border-neutral-300 flex flex-col rounded-xl bg-neutral-200 dark:bg-neutral-600 w-full px-5 '>
@@ -60,13 +62,13 @@ function UpdateUserDataForm() {
           <input
             id='avatar'
             type='file'
-            className=' mb-3 px-1 file:rounded-full file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 file:px-6 file:py-2 file:mr-5 file:hover:cursor-pointer  '
+            className=' mb-3 px-1 w-full file:rounded-full file:bg-neutral-200 file:border-solid file:border-neutral-400  file:text-neutral-400  text-neutral-500 sm:file:px-6   sm:file:py-2 file:mr-5 file:hover:cursor-pointer  '
             accept='image/*'
             onChange={(e) => setAvatar(e.target.files[0])}
             disabled={isUpdating}
           />
         </FormRow>
-        <FormRow className={'justify-end gap-5 '}>
+        <FormRow className={'justify-end gap-5 md:gap-5'}>
           <button type='reset' className='buttonStyle ' onClick={handleCancel}>
             Cancel
           </button>

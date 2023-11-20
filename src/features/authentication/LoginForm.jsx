@@ -25,9 +25,9 @@ function LoginForm() {
   }
 
   return (
-    <div className=' flex flex-col justify-center items-center  '>
+    <div className=' flex flex-col justify-center items-center px-5 '>
       <img src='/logo.png' />
-      <h1 className='text-center italic text-[50px] text-neutral-500 dark:text-neutral-300 py-8   '>
+      <h1 className='text-center italic text-[25px] md:text-[50px] text-neutral-500 dark:text-neutral-300 py-8   '>
         Log in to your account!
       </h1>
       <form
