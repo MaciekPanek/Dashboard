@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useUpdateUser } from '../../hooks/useUpdateUser';
 import { useUser } from '../../hooks/useUser';
 import FormRow from '../../ui/FormRow';
@@ -10,12 +10,20 @@ function UpdateUserDataForm() {
       email,
       user_metadata: { fullName: currentFullName },
     },
+    isLoading,
   } = useUser();
 
   const { updateUser, isUpdating } = useUpdateUser();
 
   const [fullName, setFullName] = useState(currentFullName);
   const [avatar, setAvatar] = useState(null);
+
+  useEffect(() => {
+    if (!isLoading && currentFullName) {
+      // Initialize the input values when user data is available
+      setFullName(currentFullName);
+    }
+  }, [isLoading, currentFullName]);
 
   function handleSubmit(e) {
     e.preventDefault();

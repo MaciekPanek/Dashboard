@@ -5,8 +5,8 @@ import { useLogin } from '../../hooks/useLogin';
 import LoginFormRow from '../../ui/LoginFormRow';
 
 function LoginForm() {
-  const [email, setEmail] = useState('maciek@example.com');
-  const [password, setPassword] = useState('123456');
+  const [email, setEmail] = useState('user@demo.com');
+  const [password, setPassword] = useState('12345678');
   const { onLogin, onLoginLoad } = useLogin();
 
   function handleSubmit(e) {
