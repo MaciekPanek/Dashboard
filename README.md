@@ -8,6 +8,7 @@ Dashboard app only for villa rental company employees. Build with React with use
 - Database: [supabase](https://supabase.com//)
 
 **Other Technologies:** _React Router, React Query_
+
 ![Alt text](/public/VillaRentalSS.jpeg?raw=true)
 ![Alt text](/public/villaSS-1.jpeg?raw=true)
 ![Alt text](/public/villaSS-2.jpeg?raw=true)
