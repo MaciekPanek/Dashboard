@@ -7,7 +7,7 @@ Dashboard app only for villa rental company employees. Build with React with use
 - Styling: [Tailwind CSS](https://tailwindcss.com/)
 - Database: [supabase](https://supabase.com//)
 
-**Other Technologies:** _React Router, React Query_
+**Other Technologies:** _React Router, React Query_, React Hook Form, React Google Charts
 
 ![Alt text](/public/VillaRentalSS.jpeg?raw=true)
 ![Alt text](/public/villaSS-1.jpeg?raw=true)
