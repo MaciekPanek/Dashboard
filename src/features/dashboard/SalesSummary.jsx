@@ -8,14 +8,21 @@ export function SalesSummary() {
 
   if (!sales) return <Loader />;
 
-  const currentDate = new Date(new Date().getFullYear(), 10, 17);
+  const currentDate = new Date(new Date().getFullYear(), 10, 17, 23, 59, 59);
 
   const last30DaysSales = sales.filter((sale) => {
     const arrivalDate = new Date(sale.arrivalDate);
-    return arrivalDate <= currentDate && arrivalDate >= new Date().setDate(currentDate.getDate() - 30);
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(currentDate.getDate() - 30);
+    thirtyDaysAgo.setHours(0, 0, 0, 0);
+
+    return arrivalDate <= currentDate && arrivalDate >= thirtyDaysAgo;
   });
 
-  const totalSalesValue = last30DaysSales.reduce((total, sale) => total + sale.cost, 0);
+  const totalSalesValue = last30DaysSales.reduce(
+    (total, sale) => total + sale.cost,
+    0
+  );
   return (
     <SummaryTemplate data={totalSalesValue} title='Sales' currency='$'>
       <LiaMoneyBillWaveSolid className='text-[70px] text-[#308f59] ' />
