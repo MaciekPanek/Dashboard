@@ -10,7 +10,7 @@ export function CurrentlyBookedSummary() {
 
   if (!stays || !villasNumber) return <Loader />;
 
-  const currentDate = new Date(new Date().getFullYear(), 10, 17);
+  const currentDate = new Date(2023, 10, 17);
 
   const currentlyBooked = stays.filter((stay) => {
     const arrivalDate = new Date(stay.arrivalDate);
@@ -29,7 +29,10 @@ export function CurrentlyBookedSummary() {
       <SummaryTemplate data={numberOfBooking} title='Currently booked'>
         <HiOutlineCalendarDays className='text-[70px] text-[#30668f]' />
       </SummaryTemplate>
-      <SummaryTemplate data={occupancyRateNumber} title='Occupacy rate' percent='%'>
+      <SummaryTemplate
+        data={occupancyRateNumber}
+        title='Occupacy rate'
+        percent='%'>
         <HiOutlineChartBar className='text-[70px] text-[#308f7c] ' />
       </SummaryTemplate>
     </>

@@ -29,7 +29,7 @@ function SalesChart() {
   const aggregatedSales = aggregateSalesByDay(sales);
 
   const last30Days = Array.from({ length: 30 }, (_, index) => {
-    const currentDate = new Date(new Date().getFullYear(), 10, 17);
+    const currentDate = new Date(2023, 10, 17);
     currentDate.setDate(currentDate.getDate() - index);
     return currentDate.toLocaleDateString('en-US', {
       day: 'numeric',

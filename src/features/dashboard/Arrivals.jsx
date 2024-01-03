@@ -8,7 +8,7 @@ function Arrivals() {
 
   if (!arrivals) return <Loader />;
 
-  const currentDate = new Date(new Date().getFullYear(), 10, 17).toISOString().split('T')[0];
+  const currentDate = new Date(2023, 10, 17).toISOString().split('T')[0];
 
   const todayArrivals = arrivals.filter((arrival) => {
     const arrivalDate = new Date(arrival.arrivalDate);

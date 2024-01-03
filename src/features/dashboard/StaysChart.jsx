@@ -14,14 +14,17 @@ function StaysChart() {
   // Filter stays that occurred in the last 30 days
   const last30DaysStays = stays.filter((stay) => {
     const stayCreatedAt = new Date(stay.created_at);
-    const thirtyDaysAgo = new Date(new Date().getFullYear(), 10, 17);
+    const thirtyDaysAgo = new Date(2023, 10, 17);
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
     return stayCreatedAt >= thirtyDaysAgo;
   });
 
   // Count stays based on duration
   const staysCountByDuration = last30DaysStays.reduce((acc, stay) => {
-    const durationDays = Math.ceil((new Date(stay.departureDate) - new Date(stay.arrivalDate)) / (1000 * 60 * 60 * 24));
+    const durationDays = Math.ceil(
+      (new Date(stay.departureDate) - new Date(stay.arrivalDate)) /
+        (1000 * 60 * 60 * 24)
+    );
 
     if (durationDays === 1) {
       acc['1 night'] = (acc['1 night'] || 0) + 1;

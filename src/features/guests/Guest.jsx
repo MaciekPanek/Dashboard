@@ -8,7 +8,8 @@ function Guest({ guest }) {
     Guests: { fullName, email, flag, country, phoneNumber },
   } = guest;
 
-  const currentDate = new Date(new Date().getFullYear(), 10, 17);
+  const currentDate = new Date(2023, 10, 17);
+
   const isCurrentDateInRange =
     currentDate >= new Date(arrivalDate) &&
     currentDate <= new Date(departureDate);

@@ -8,9 +8,9 @@ export function BookingsSummary() {
 
   if (!stays) return <Loader />;
 
-  const currentDate = new Date(new Date().getFullYear(), 10, 17);
+  // const currentDate = new Date(2023, 10, 17);
 
-  const dateThirtyDaysAgo = new Date().setDate(currentDate.getDate() - 30);
+  const dateThirtyDaysAgo = new Date(2023, 9, 17);
 
   const last30DaysBookings = stays.filter((stay) => {
     const createdBooking = new Date(stay.created_at);
